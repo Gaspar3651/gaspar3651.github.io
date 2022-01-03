@@ -1,0 +1,26 @@
+﻿@model Check02.Models.MdRaca
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Raça</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NmRaca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmRaca)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <input type="button" class="btn btn-default" value="Editar" onclick="location.href='@Url.Action("Edit", "Raca", new { id = Model.IdRaca })'" />
+    <input type="button" class="btn btn-default" value="Voltar" onclick="location.href='@Url.Action("Index", "Raca")'" />
+</p>

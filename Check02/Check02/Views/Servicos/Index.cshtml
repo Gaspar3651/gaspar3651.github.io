@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Check02.Models.MdServicos>
+
+@{
+    ViewBag.Title = "Produtos e Serviços";
+}
+
+<h2>Produtos e Serviços</h2>
+
+<p>
+    <input type="button" class="btn btn-default" value="Cadastrar" onclick="location.href='@Url.Action("Create", "Servicos")'" />
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DescricaoProduto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Preco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescricaoProduto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Preco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipo)
+        </td>
+        <td>
+            <input type="button" class="btn btn-default" value="Editar" onclick="location.href='@Url.Action("Edit", "Servicos", new { id = item.IdServico })'" />
+            <input type="button" class="btn btn-default" value="Detalhes" onclick="location.href='@Url.Action("Details", "Servicos", new { id = item.IdServico })'" />
+            <input type="button" class="btn btn-default" value="Excluir" onclick="location.href='@Url.Action("Delete", "Servicos", new { id = item.IdServico })'" />
+        </td>
+    </tr>
+}
+
+</table>

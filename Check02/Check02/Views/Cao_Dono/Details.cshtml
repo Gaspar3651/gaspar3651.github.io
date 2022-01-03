@@ -1,0 +1,41 @@
+﻿@model Check02.Models.MdCao_Dono
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NmDono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmDono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NmCao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmCao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NmRaca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmRaca)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <input type="button" class="btn btn-default" value="Editar" onclick="location.href='@Url.Action("Edit", "Cao_Dono", new { id = Model.IdCao_Dono })'" />
+    <input type="button" class="btn btn-default" value="Voltar" onclick="location.href='@Url.Action("Index", "Cao_Dono")'" />
+</p>

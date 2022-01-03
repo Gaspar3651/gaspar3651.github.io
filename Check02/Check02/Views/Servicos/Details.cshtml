@@ -1,0 +1,42 @@
+﻿@model Check02.Models.MdServicos
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>DetaiDetalhesls</h2>
+
+<div>
+    <h4>Produtos e Serviços</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DescricaoProduto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescricaoProduto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Preco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <input type="button" class="btn btn-default" value="Editar" onclick="location.href='@Url.Action("Edit", "Servicos", new { id = Model.IdServico })'" />
+    <input type="button" class="btn btn-default" value="Voltar" onclick="location.href='@Url.Action("Index", "Servicos")'" />
+</p>

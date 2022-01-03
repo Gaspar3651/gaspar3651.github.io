@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Check02", "Check02\Check02.csproj", "{97321EF3-A813-4D74-AEF6-3BC05E329958}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97321EF3-A813-4D74-AEF6-3BC05E329958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97321EF3-A813-4D74-AEF6-3BC05E329958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97321EF3-A813-4D74-AEF6-3BC05E329958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97321EF3-A813-4D74-AEF6-3BC05E329958}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DF3A4B6C-E366-4520-99FE-40BB9A7EAE3C}
+	EndGlobalSection
+EndGlobal

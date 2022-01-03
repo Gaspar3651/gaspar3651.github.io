@@ -1,0 +1,39 @@
+﻿@model Check02.Models.MdCao
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir</h2>
+
+<h3>Tem certeza que deseja excluir este registro?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NmCao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmCao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdRaca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmRaca)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-default" /> |
+            <input type="button" class="btn btn-default" value="Voltar" onclick="location.href='@Url.Action("Index", "Cao")'" />
+        </div>
+    }
+</div>

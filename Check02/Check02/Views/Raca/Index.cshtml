@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Check02.Models.MdRaca>
+
+@{
+    ViewBag.Title = "Raças";
+}
+
+<h2>Raças</h2>
+
+<p>
+    <input type="button" class="btn btn-default" value="Cadastrar Nova Raça" onclick="location.href='@Url.Action("Create", "Raca")'" />
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NmRaca)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NmRaca)
+        </td>
+        <td>
+            <input type="button" class="btn btn-default" value="Editar" onclick="location.href='@Url.Action("Edit", "Raca", new { id = item.IdRaca })'" />
+            <input type="button" class="btn btn-default" value="Detalhes" onclick="location.href='@Url.Action("Details", "Raca", new { id = item.IdRaca })'" />
+            <input type="button" class="btn btn-default" value="Excluir" onclick="location.href='@Url.Action("Delete", "Raca", new { id = item.IdRaca })'" />
+        </td>
+    </tr>
+}
+
+</table>

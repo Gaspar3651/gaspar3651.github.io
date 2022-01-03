@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - Pet Shop</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+
+    </head>
+
+    <style>
+        /* ########## ESTILIZAÇÃO DO BOTÃO ########## */
+        input[id="switch"] {
+            visibility: hidden;
+            display: none;
+        }
+
+        .check {
+            position: relative;
+            display: block;
+            width: 40px;
+            height: 20px;
+            background: #dee2e6;
+            cursor: pointer;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: ease-in 0.5s;
+            top: -20px;
+        }
+
+        input[type="checkbox"]:checked ~ .check {
+            background: #fff;
+            transform: translateX(30px);
+        }
+
+        #lblCcheck {
+            float: right;
+            margin-right: 50px;
+            width: 70px;
+            height: 20px;
+        }
+
+        #sol {
+            display: block;
+            position: relative;
+            z-index: 3;
+            left: 1px;
+            cursor: pointer;
+        }
+
+        #lua {
+            position: relative;
+            top: -40px;
+            float: right;
+            clear: both;
+            cursor: pointer;
+        }
+
+        /* ########## MUDANDO AS CORES ########## */
+        :root {
+            --body-bg: #fafafa;
+            --body-color: #555;
+            --link-color: #222;
+            --btn-color: #DCDCDC;
+        }
+
+        .dark-mode:root {
+            --body-bg: #212529;
+            --body-color: #899095;
+            --link-color: #dee2e6;
+            --btn-color: #A9A9A9;
+        }
+
+        body {
+            background-color: var(--body-bg);
+            color: var(--body-color);
+            transition: 0.5s all;
+        }
+
+
+
+        #idioma{
+            display: block;
+            float: right;
+            position: relative;
+            left: 250px;
+        }
+
+        /* ########## GERAL ########## */
+        .btnn {
+            border-radius: 5px;
+            border: 1px solid silver;
+            color: black;
+            background-color: silver;
+            box-shadow: 2px 2px 5px dimgray;
+            padding: 7px;
+            text-decoration: none;
+            transition: 0.3s all;
+        }
+
+        .btnn:hover {
+            color: black;
+            padding: 7px 20px;
+            border: 1px solid black;
+        }
+
+
+        .btn {
+            margin-top: -8px;
+            background-color: var(--btn-color);
+            border-color: gray;
+        }
+
+    </style>
+
+
+    <body onload="checar()">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Pet Shop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Donos", "Index", "Dono")</li>
+                        <li>@Html.ActionLink("Cães", "Index", "Cao")</li>
+                        <li>@Html.ActionLink("Raças", "Index", "Raca")</li>
+                        <li>@Html.ActionLink("Cães e Donos", "Index", "Cao_Dono")</li>
+                        <li>@Html.ActionLink("Produtos e Serviços", "Index", "Servicos")</li>
+                    </ul>
+                    <!-- @Html.Partial("_LoginPartial") -->
+
+                    <br />
+                    <label id="lblCcheck">
+                        <img src="@Url.Action("GetImagemSol")" alt="" id="sol" />
+
+                        <input type="checkbox" id="switch">
+                        <span class="check"></span>
+
+                        <img src="@Url.Action("GetImagemLua")" alt="" id="lua" />
+
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Pet Shop</p>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
+
+    <script>
+        const $html = document.querySelector("html");
+        const $checkbox = document.querySelector("#switch");
+
+        $checkbox.addEventListener("change", function () {
+            $html.classList.toggle("dark-mode");
+            document.cookie;
+            if (document.cookie == 1) {
+                document.cookie = 0;
+            } else if (document.cookie == 0) {
+                document.cookie = 1;
+            }
+        })
+
+
+        function checar() {
+            if (document.cookie == 1) {
+                $html.classList.toggle("dark-mode");
+                document.getElementById("switch").checked = true;
+                document.body.style.transition = "none";
+            } else if (document.cookie == 0) {
+                $html.classList.toggle("branco");
+            }
+
+        }
+    </script>
+</html>

@@ -1,0 +1,34 @@
+﻿@model Check02.Models.MdCao
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Cao</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NmCao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmCao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NmRaca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmRaca)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <input type="button" class="btn btn-default" value="Editar" onclick="location.href='@Url.Action("Edit", "Cao", new { id = Model.IdCao })'" />
+    <input type="button" class="btn btn-default" value="Voltar" onclick="location.href='@Url.Action("Index", "Cao")'" />
+</p>
