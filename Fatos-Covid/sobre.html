@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatos Covid</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="imagens/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+</head>
+<style>
+    
+    body{
+        background-image: linear-gradient(#ffffff, #dddddd, #ececec, #dddddd, #ffffff);
+    }
+    .conteudo{
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .conteudo h2{
+        text-align: left;
+        text-indent: 0%;
+    }
+
+    fieldset{
+        margin-bottom: 100px;
+        margin-top: 40px;
+        position: relative;
+        top: 40px;
+    }
+
+    .ser p{
+        text-indent: 0px;
+        text-align: center;
+    }
+    .ser img{
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+    }
+
+    .aluno{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .prof{
+        display: flex;
+        justify-content: space-around;
+    }
+
+
+    @media(max-width: 680px){ /*Celular*/
+        .conteudo{
+            width: 90%;
+        }
+        .ser img{
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
+        .ser p{
+            font-size: 13px;
+        }
+        .aluno .ser img{
+        margin-left: 10px;
+        }
+        
+        /*Footer*/
+        footer .icone:hover{
+        width: 25px;
+        }
+        footer #es{
+            font-size: 13px;
+        }
+        footer #dir{
+            font-size: 11px;
+        }
+    }
+    @media (min-width: 682px) and (max-width: 950px){ /*Tablet*/
+        footer .icone:hover{
+        width: 25px;
+        }
+        .ser img{
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+        }
+    }
+</style>
+<body>
+
+    <header> 
+        
+        <img src="imagens/logo.png" alt="Logo" class="logo">
+        
+        <h1> Fatos Covid </h1> 
+
+        <input type="checkbox" id="check">
+        <label for="check" class="btn-menu"> <i class="fas fa-bars"></i></label>
+
+        <ul class="menu">
+            <li> <a href="index.html"> INÍCIO </a></li>
+            <li> <a href="artigos.html"> ARTIGOS </a></li>
+            <li> <a href="fontes.html"> FONTES </a></li>
+            <li> <a href="#" style="text-decoration:aquamarine underline 5px; transition: none;"> SOBRE </a></li>
+        
+        </ul>
+    </header>
+    
+    <br><br><br>
+
+    <div class="conteudo">
+
+        <img src="imagens/ifs-lagarto.jpg" style="width: 100%;" class="img-dir"> 
+        
+        <fieldset>
+
+            <legend> <h2> O que é Fatos Covid</h2> </legend>
+            <p>Este é um projeto produzido por três alunos cursando o 3º ano do Ensino Médio Integrado em Redes de Computadores no Instituto Federal de Sergipe (IFS) com o auxilio de três professores orientadores.</p>
+            <p>Fatos Covid é um projeto com o intuito de  informar e esclarecer questões relacionadas a Covid-19 e a pandemia, além de combater a desinformação e as noticias falsas(Fake News), evitando o compartilhamento da mesma.</p>
+        
+        </fieldset> 
+
+         
+        <img src="imagens/ifs-campus-lagarto-aerio.jpg" style="width: 100%;" class="img-dir">
+
+        <fieldset>
+            
+            <legend><h2>Objetivos do projeto</h2></legend>
+            <p>Criação de um site com o objetivo de informar e combater a desinformação sobre o novo corona vírus e a pandemia, focado tanto em pessoas que buscam por uma informação mais rápida e simples quanto em pessoas que buscam por um estudo mais aprofundado, com a presença de artigos científicos.</p>
+       
+        </fieldset>
+        
+        <fieldset>
+
+            <legend><h2>Equipe</h2></legend>
+
+            <h3>Alunos / Programadores</h3>
+
+            <div class="aluno">
+                
+                <div class="ser">
+                    <img src="imagens/andri.jpg" alt="">
+                   <p> Andrielysson <br> Barbosa</p>
+                </div>
+
+                <div class="ser">
+                    <img src="imagens/leo.jpg" alt="">
+                    <p>Leonardo <br> Alexandre</p>
+                </div>
+
+                <div class="ser">
+                    <img src="imagens/vitor.jpeg" alt="">
+                    <p>Vitor <br> Vieira</p>
+                </div>
+            
+            </div>
+            
+            <h3>Orientadores</h3>
+
+            <div class="prof">
+            
+                <div class="ser">
+                    <img src="imagens/rubens.jpg" alt="">
+                    <p>Rubens <br> Matos</p>
+                </div>
+
+                <div class="ser">
+                    <img src="imagens/silvio.jpg" alt="">
+                    <p>Silvio <br> Sandes</p>   
+                </div>
+
+                <div class="ser">
+                    <img src="imagens/aline.jpg" alt="">
+                    <p>Aline <br> Alves</p>
+                </div>
+
+            </div>
+
+        </fieldset>
+    </div>
+      
+    
+    <footer>
+        <hr style="width: 83%; margin: auto;"> <br>
+        
+        <div id="dir">
+            &COPY; Todos os direitos reservados <br> <br>
+            <img src="imagens/logo-ifs.png" class="logo-ifs">
+        </div>
+
+        <div id="es">
+            Andrielysson Barbosa 
+            <a href="https://www.instagram.com/gaspar3651_/" target="_blank"> <img src="imagens/insta.png" class="icone"> </a> <br> <br>
+            
+            Leonardo Alexandre 
+            <a href="https://www.instagram.com/leonardo._.barreto/" target="_blank"> <img src="imagens/insta.png" class="icone"> </a> <br> <br>
+            
+            Vitor Vieira Carvalho 
+            <a href="https://www.instagram.com/vitorcarvalho968/" target="_blank"> <img src="imagens/insta.png" class="icone"> </a> <br> <br>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>

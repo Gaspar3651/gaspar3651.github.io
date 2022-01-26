@@ -1,0 +1,473 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap'); /* FONTE "Sansita Swashed" */
+@import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic:ital,wght@1,700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} 
+hr{
+    margin-bottom: 5px;
+    box-shadow: 0px 0px 2px black;
+}
+
+    /*Logo e Menu*/
+
+header{
+    font-family: sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 40px 7%;
+    z-index: 100000;
+}
+header .logo{
+    float: left;
+    width: 7%;
+    transition: 0.6s;
+}
+header ul{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header ul li{
+    position: relative;
+    list-style: none;
+}
+header ul li a{
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: black;
+    letter-spacing: 2px;
+    font-weight: 500px;
+    transition: 0.6s;
+}
+header ul li a:hover{
+    text-decoration:#7fffd4 underline 5px;
+    transition: none;
+}
+header h1{
+    display: block;
+    float: left;
+    margin-right: 30%;
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 35pt;
+    color: #800000;
+    text-shadow: 3px 3px 2px black;
+}
+
+.fundo{
+    position:relative;
+    background-size: cover;
+    width: 100%;
+}
+#titulo{
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 30pt;
+    text-align: center;
+    margin-bottom: 50px;
+    
+    /*text-shadow: 2px 2px 2px black;
+    color: #800000; */
+}
+
+/* ########## Redirecionamento de imagens ########## */
+
+section{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    background-image: linear-gradient(#ffffff, #dddddd, #ececec, #dddddd, #ffffff);
+}
+
+section img{
+    width: 50%;
+    cursor: pointer;
+}
+section img:hover{
+    width: 60%;
+    transition: 0.5s;
+    transition-delay: 0.30s;
+}
+#item{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    margin: auto auto 3% auto;
+    font-family: 'Andika New Basic', sans-serif;
+    font-size: 16pt;
+}
+#item-1{
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    font-family: 'Andika New Basic', sans-serif;
+    font-size: 16pt;
+}
+section a{
+    width: 100%;
+    text-decoration: none;
+    color: black;
+}
+
+    /*Nav-Bar*/
+
+header.sticky{
+    padding: 5px 100px;
+    background-color:white;
+    box-shadow: 0px 0px 7px rgba(0,0,0,.7);
+}
+header.sticky ul li a {
+    color:black;
+}
+.btn-menu{
+   
+    float: right;
+    display: none;
+}
+#check{
+    display: none;
+}
+
+      /************************* Menu Responsive*****************************/
+
+@media(max-width: 680px){   /*Celular*/
+    
+    /************Menu***************/
+    header{
+        padding: 40px 50px;
+    }
+    header.sticky{
+        padding: 3px 50px;
+        height: 80px;   
+    }
+    header.sticky ul li a{
+        color: #ffffff;
+    }
+    header .btn-menu{
+        font-size: 30px;
+        display: block;
+    }
+    header .logo{
+        width: 13%;
+    }
+    header.sticky .logo{
+        width: 13%;
+    }
+    header h1{
+        font-size: 15pt;
+        text-shadow: 1px 1px 0px black;
+    }
+    header ul{
+        display: block;
+        background-color: #942020;
+        position:absolute;
+        top: 95px;
+        width: 100%;
+        text-align: center;
+        height: 100vh;
+        left: -100%;
+    }
+    header.sticky ul{
+        top: 81px;
+    }
+    header ul li {
+        padding: 40px; 
+        
+    }
+    header ul li a{
+       font-size: medium;
+       color: #ffffff;
+    }
+
+    #check:checked ~ ul{
+        left: 0;
+        transition: 0.6s;
+    }
+    
+    /*****************Footer*************/
+    footer .logo-ifs{
+        width: 50%;
+        margin-left: 30px;
+    }
+}
+@media (min-width: 682px) and (max-width: 950px){ /*Tablet*/
+    .btn-menu{
+        display: block;
+    }
+    header{
+        padding: 30px 50px;
+    }
+    header.sticky{
+        padding: 3px 50px;
+        height: 80px;   
+    }
+    header .btn-menu{
+        font-size: 30px;
+        display: block;
+    }
+    header .logo{
+        width: 10%;
+    }
+    header.sticky .logo{
+        width: 10%;
+    }
+    header h1{
+        font-size: 25pt;
+        text-shadow: 2px 2px 1px black;
+    }
+    header ul{
+        display: block;
+        background-color: #942020;
+        position:absolute;
+        top: 95px;
+        width: 100%;
+        text-align: center;
+        height: 100vh;
+        left: -100%;
+    }
+    header.sticky ul{
+        top: 81px;
+    }
+    header ul li {
+        padding: 40px; 
+        
+    }
+    header ul li a{
+        font-size: 23px;   
+        color: #ffffff;
+    }
+    header.sticky ul li a{
+        color: #ffffff;
+    }
+    #check:checked ~ ul{
+        left: 0;
+        transition: 0.6s;
+    }
+    
+    /*****************Footer******************/
+    footer .logo-ifs{
+        width: 20%;
+        margin-left: 65px;
+    }
+}
+
+
+                    /* ########## CONTEUDO ########## */
+.conteudo{
+    clear: both;
+    padding: 1% 8%;
+    margin-top: 100px;
+}
+.conteudo p{
+    text-align: justify;
+    text-indent: 4%;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 3px;
+    margin-top: 10px;
+}
+.conteudo h1{
+    font-family: 'Sansita Swashed', cursive;
+    margin-top: 1%;
+    margin-right: 7px;
+    margin-left: 7px;
+    width: auto;
+}
+.conteudo h2{
+    font-family: 'Sansita Swashed', cursive;
+    text-indent: 2%;
+    text-align: center;
+    margin-right: 7px;
+    margin-left: 7px;
+    width: auto;
+}
+.conteudo h3 {
+    font-family: 'Sansita Swashed', cursive;
+    text-indent: 2%;
+    margin-bottom: 10px;
+    margin-top: 15px;
+} 
+.conteudo ul{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 6%;
+}
+.conteudo ol{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 6%;
+}
+.conteudo fieldset{
+    padding: 5px;
+}
+
+                    /* ########## BOTÃO DE REDIRECIONAMENTO ########## */
+.btn{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 4%;
+    padding: 3px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    background-color: #C0C0C0;
+    box-shadow: 2px 2px 5px black;
+    color: black;
+    transition: 0.5s background-color;
+    cursor: pointer;
+    transition: 0.3s padding;
+}
+.btn:hover{
+    background-color: gray;
+    padding: 1%;
+}
+
+/* ########## Botão Mais ########## */
+.botaomais{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 4%;
+    padding: 4px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    background-color: #C0C0C0;
+    box-shadow: 2px 2px 5px black;
+    color: black;
+    transition: 0.5s background-color;
+    cursor: pointer;
+    margin-top: 7px;
+    margin-bottom: 10px;
+}
+.botaomais:hover{
+    background-color: gray;
+}
+
+/* ########## Botão Artigo ########## */
+.btnartigo{    
+    color: #800000;
+    text-decoration: none;
+    margin-left: 4%;
+    padding: 3px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px black;
+    transition: 0.3s padding;
+    background-color: #DCDCDC;
+}
+.btnartigo:hover{
+    padding: 10px;
+}
+
+
+                    /* ########## IMG ########## */
+/* ########## GRUDAR A IMAGEM NA DIREITA (class="img-dir") ########## */
+img.img-dir{
+    display: block;
+    float: right;
+    margin: 5px 0px 5px 10px;
+    border: 5px solid #ffffff;
+    box-shadow: 0px 0px 7px black;
+    border-radius: 6px;
+    width: 30%;
+}
+/* ########## GRUDAR A IMAGEM NA ESQUERDA (class="img-es") ########## */
+img.img-es{
+    display: block;
+    float: left;
+    margin: 5px 10px 7px 0px;
+    border: 5px solid #ffffff;
+    box-shadow: 0px 0px 7px black;
+    border-radius: 6px;
+    width: 40%;
+}
+/* ########## IMAGEM NO MEIO (class="img-meio") ########## */
+img.img-meio{
+    display: block;
+    margin: 5px auto 7px auto;
+    border: 5px solid #ffffff;
+    box-shadow: 0px 0px 7px black;
+    border-radius: 6px;
+    width: 35%;
+}
+/* ########## IMAGEM DO BOTÃO DE REDIRECIONAMENTO ########## */
+.icone{
+    width: 25px;
+    margin-bottom: -7px;
+    transition: 0.3s width;
+}
+.btn:hover .icone{
+    width: 3%;
+    margin-bottom: -1%;
+}
+.btnartigo:hover .icone{
+    width: 3%;
+    margin-bottom: -1%;
+}
+footer .icone:hover{
+    width: 4.5%;
+    margin-bottom: -1%;
+}
+
+/* ########## FOOTER ########## */
+footer{
+    margin-bottom: 200px;
+    padding-top: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer #dir{
+    display: block;
+    float: right;
+    width: 50%;
+    padding-left: 10px;
+    border-left: 1px solid black;
+}
+footer #es{
+    display: block;
+    float: left;
+    width: 50%;
+    text-align: right;
+    padding-right: 10px;
+    
+}
+.logo-ifs{
+    width: 15%; 
+    margin-left: 50px;
+}
+
+
+.hidden{
+    display: none;
+}
+/*Comentários*/
+#facebook{
+    display: flex;
+    flex-wrap: wrap;
+}
+/*Animação em css*/
+[data-anime]{
+    opacity: 0;  
+    transition: .3s;
+    display: flex;
+}
+[data-anime ="left"]{
+    transform: translate3d(-50px,0,0);
+}
+
+[data-anime ="right"]{
+    transform: translate3d(50px,0,0);
+}
+
+[data-anime].animate{
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+}

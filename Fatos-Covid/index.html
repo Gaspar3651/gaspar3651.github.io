@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatos Covid</title>
+    <link rel="shortcut icon" href="imagens/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    
+    <style>
+        #img-vacina{
+            width: 40%;
+        }
+
+     @media(max-width: 680px){ /*Celular*/ 
+       
+        /*Footer*/
+        footer .icone:hover{
+        width: 25px;
+        }
+        footer #es{
+            font-size: 13px;
+        }
+        footer #dir{
+            font-size: 11px;
+        }
+
+        /*Botões*/
+        .btn{
+            font-size:medium;
+            margin-left: 0px;
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .btn:hover{
+            padding: 3px;
+        }
+        .btn .icone{
+            margin-bottom: -1%;
+        }
+        .btn:hover .icone{
+            width: 20px;
+            margin-bottom: -1%;
+        }
+        .btnartigo{
+            font-size:medium;
+            margin-left: 0px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            display: block;
+            text-align: center;
+        }
+        .btnartigo .icone{
+            margin-bottom: -1%;
+        }
+        .btnartigo:hover{
+            padding: 3px;
+        }
+        .btnartigo:hover .icone{
+            width: 20px;
+            margin-bottom: -1%;
+        }
+        .conteudo .icone{
+            width: 20px;
+        }
+
+        /*Imagens*/
+        img.img-es{
+            width: 50%;
+        }
+        img.img-dir{
+            width: 55%;
+        }
+        img.img-meio{
+            width: 55%;
+        }
+        #img-vacina{
+            width: 50%;
+        }
+
+        /*Section*/
+        #titulo{
+            font-size: 30px;
+        }
+        #item{
+            width: 100%;
+        }
+        #item-1{
+            width: 50%;
+        }
+        section a p{
+            font-size:13px;
+        }
+        section img{
+            width: 55%;
+        }
+        section img:hover{
+            width: 55%;
+        }
+
+        /*Imgagem de fundo*/
+        .fundo{
+            height: 40vh;
+        }
+    }
+    
+    @media (min-width: 682px) and (max-width: 950px){ /*Tablet*/
+        
+        /*Footer*/
+        footer .icone:hover{
+        width: 25px;
+        }
+        
+        /*Botões*/
+        .btn{
+            font-size: 14px;
+        }
+        .btn:hover{
+            padding: 3px;
+        }
+        .btn .icone{
+            width: 20px;
+        }
+        .btn:hover .icone{
+            width: 20px;
+        }
+        .btnartigo{
+            font-size: 15px;
+        }
+        .btnartigo:hover{
+            padding: 3px;
+        }
+        .btnartigo .icone{
+            width: 20px;
+        }
+        .btnartigo:hover .icone{
+            width: 20px;
+        }
+
+        /*Imagens*/
+        img.img-es{
+            width: 45%;
+        }
+        img.img-dir{
+            width: 43%;
+        }
+        img.img-meio{
+            width: 50%;
+        }
+        #img-vacina{
+            width: 50%;
+        }
+
+        /*Section*/
+        #titulo{
+            font-size: 37px;
+        }
+        section img{
+            width: 60%;
+        }
+        section img:hover{
+            width: 60%;
+        }
+    }
+    </style>
+</head>
+<body> 
+    <!--Logo e Menu-->
+    <header> 
+        
+        <img src="imagens/logo.png" alt="Logo" class="logo" >
+        
+        <h1> Fatos Covid </h1> 
+
+        <input type="checkbox" id="check">
+        
+        <label for="check" class="btn-menu"> 
+        
+            <i class="fas fa-bars"></i>    
+        
+        </label>
+
+        <ul class="menu">
+            <li> <a href="#"style="text-decoration:aquamarine underline 5px; transition: none;"> INÍCIO </a></li>
+            <li> <a href="artigos.html"> ARTIGOS </a></li>
+            <li> <a href="fontes.html"> FONTES </a></li>
+            <li> <a href="sobre.html"> SOBRE </a></li>
+        
+        </ul>
+    </header>
+    
+    <br><br><br>
+
+    <!--Fundo-->
+    <img src="imagens/fundo.jpg" alt="Fundo" class="fundo"> 
+
+
+    <!--Interação-->
+    <section>
+        <h1 id="titulo" >Temas</h1>
+
+        <div id="item">
+            <a href="index.html#origem">
+                <img src="imagens/origem-img.png" alt="Origem Covid">
+                <p> Origem </p>
+            </a>
+
+            <a href="index.html#sintomas">
+                    <img src="imagens/sintomas-img.png" alt="Sintomas Covid">
+                    <p> Sintomas </p>
+            </a>
+
+            <a href="index.html#prevencoes">
+                <img src="imagens/prevencoes.png" alt="Prevenções covid">
+                <p> Prevenções </p>
+            </a>
+            
+            <a href="index.html#tratamento">
+                <img src="imagens/tratamentos-img.png" alt="Tratamentos Covid">
+                <p> Tratamentos </p>
+            </a>
+
+        </div>
+        
+        <div id="item-1">
+        
+            <a href="index.html#vacina">
+                <img src="imagens/vacina-img.png" alt=" Vacina"> 
+                <p> Vacinas </p>
+            </a>
+        
+            <a href="index.html#perguntas">
+                <img src="imagens/perguntas-img.png" alt="Perguntas Covid">
+                <p> Perguntas </p>
+            </a>
+            
+        </div>
+    
+    </section>
+
+    <p style="margin-top: 10px; font-family: 'Andika New Basic', sans-serif;">Atualizado dia 20/04/2021</p>
+
+    <!--Conteúdo-->
+
+    <div class="conteudo">
+        
+        <!--O que Covid-->
+        
+        <fieldset>
+            <legend><h1> O que é Covid-19 </h1></legend>
+            
+            <img src="imagens/covid.jpg" alt="O que é covid" class="img-dir">
+
+            <p> Os coronavírus são uma grande família de vírus, a COVID-19 é uma doença causada pelo coronavírus, denominado SARS-CoV-2, que apresenta um espectro clínico variando de infecções assintomáticas a quadros graves. O primeiro caso de Covid foi descoberto na região de Wuhan na China, e se espalhou para o mundo todo, gerando colapsos na economia e na saúde global.</p>
+            
+            <p>O Brasil foi um dos países que mais sofreram com o corona vírus, registrando mais de 1000 mortes diárias nos meses de junho e julho (Pico da pandemia no país). Por isso se previnam, usando máscara e álcool em gel, protegendo não só a si mesmo, mas a todos.
+            </p>  
+
+            <p id="origem">Saiba mais em:</p>
+            <a href="https://coronavirus.saude.gov.br/sobre-a-doenca" target="_blank" class="btn"> Ministério da Saúde <img src="imagens/globo.png" class="icone"></a>
+        </fieldset>
+
+        <!--Origem Covid-->
+        <fieldset>
+            <legend> <h1>Origem da Covid-19</h1> </legend>
+        
+        <h3>
+            Como surgiu a covid-19? 
+        </h3>
+
+            <p>
+                Pesquisadores chineses indicaram que a origem da transmissão foi dada pelos morcegos que tinham um tipo de coronavírus que teve o efeito de mutação que passou a infectar seres humanos, outro animal que tinha coronavírus foram os pangolins que tem menos semelhanças genômicas com o Sars-Cov-2 (síndrome respiratória aguda grave), mas que tem 5 dos 6 resíduos de aminoácidos essenciais para a interação. 
+            </p>
+            
+            <h3>
+                Qual foi o primeiro caso da covid-19 no mundo?
+            </h3>
+
+            <p>
+                O primeiro caso da covid-19 foi de um paciente no hospital chinês na cidade de Wuhan no dia 12 de dezembro de 2019 apresentando sintomas de covid-19 desde o dia 01/12/2019.
+            </p>
+
+            <h3>Nova Cepa:</h3>
+
+            <p>Foi descoberto uma nova variante do Covid-19 que é uma CEPA, cientificamente conhecida como "Cepa B.1.1.7", que foi identificada no Reino Unido. Essa variante é mais contagiosa, porém menos letal, e a maioria das vacinas que estão hoje em produção ou que já estão prontas, também protegem contra essa nova variante. Ainda não sabemos se uma pessoa que já teve a Covid-19 está imune a Cepa, ou virse-versa. </p>
+       
+            <p>Essa nova fase do vírus identificada no Reino Unido já se espalhou para vários países do mundo, como os Estados Unidos, Japão e também o Brasil. No Brasil essa nova CEPA foi identificada no estado de São Paulo.</p>
+           
+            <p >Mas com essa nova descoberta não precisa ter pânico, basta continuar com os cuidados e as recomendações médicas de usar máscaras, lavar bem as mãos, entre outros cuidados que você pode seguir, buscando em nosso site.</p>
+
+            <h3>Nova Variante Brasileira: </h3>
+
+            <p>A nova Cepa brasileira detectada no estado do Amazonas também possui um alto índice de transmissibilidade, porém não é mais letal que as demais. Essa Cepa foi uma das principais responsáveis que causou o grande colapso nos hospitais de Manaus, que teve um aumento nas internações e nas mortes, e também a falta de oxigênio que ocorreu no estado por consequência disso.</p>
+
+            <p id="sintomas">Essa Cepa brasileira é chamada de P.1, e foi detectada também em outros países, como o Japão, e fez com que vários países do mundo restringissem viagens vindas do Brasil, ou que tenham passado por aqui. E aqui no Brasil o P.1 já foi identificado em aproximadamente dez estados.
+            Segundo a OMS essa variante brasileira é considerada uma das mais preocupantes em circulação no mundo, junto com a variante Britânica e Sul-Africana.</p>
+
+            <p>Saiba mais em:</p>
+            <a href="https://jornal.usp.br/artigos/covid2-o-que-se-sabe-sobre-a-origem-da-doenca/" target="_blank" class="btn"> Jornal Usp <img src="imagens/globo.png" class="icone"></a>
+            
+            <a href="https://www.correiobraziliense.com.br/ciencia-e-saude/2021/01/4897937-covid-19-o-que-muda--ou-nao--no-combate-a-pandemia-com-a-nova-variante-do-coronavirus-no-brasil.html" target="_blank" class="btn"> Nova Variante Cepa B.1.1.7 <img src="imagens/globo.png" class="icone"></a>
+
+            <a href="https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2021/02/12/variante-brasileira-do-coronavirus-e-identificada-em-dez-estados-diz-saude.htm" class="btn" target="_blank">Nova Variante Brasileira P.1 <img src="imagens/globo.png" class="icone"></a>
+        
+        </fieldset>
+            
+        <!--Sintomas-->
+        <fieldset id="batata">
+            <legend> <h1> Sintomas </h1> </legend>
+
+            <img src="imagens/febre.jpg" alt="Imagem Sintomas" class="img-dir">
+            
+            <h3>Sintomas mais comuns</h3>
+
+            <ul >
+                    <li>Fadiga;</li> 
+
+                    <li>Febre;</li>
+                    
+                    <li>Tosse seca;</li> 
+                    
+                    <li>Dificuldade para respirar;</li> 
+                    
+                    <li>Perda de gosto ou cheiro;</li> 
+                    
+                    <li>Dor de garganta ou de cabeça;</li> 
+                    
+                    <li>Diarreia;</li>
+            </ul>
+            <h3>Sintomas mais graves</h3>
+            
+            <ul>
+                <li> Falta de apetite;</li>
+
+                <li>Dores ou pressão no peito;</li> 
+
+                <li>Alta temperatura (38ºC ou mais); </li>
+
+                <li>Falta de ar; </li>
+            </ul>
+
+            <h3> Procure por atendimento médico imediatamente caso apresente:</h3>
+
+                <ul>
+                    <li>Febre e/ou tosse; </li>
+                    
+                    <li> para respirar; </li>
+                    
+                    <li>Dor ou pressão no peito; </li>
+                    
+                    <li>Perda da fala ou dos movimentos; </li>
+                </ul>
+
+                <p id="prevencoes">Saiba mais em:</p>
+                <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/coronavirus-disease-covid-19#:~:text=symptoms" target="_blank" class="btn"> Organização Mundial da Saúde <img src="imagens/globo.png" class="icone"></a>
+            </fieldset>
+
+
+            <!--Prevenções-->
+            <fieldset>
+                <legend><h1>Prevenções </h1></legend>
+            
+                <img src="imagens/higienizacao.jpg" alt="Imagem lavando as mãos" class="img-dir">
+
+                <p>Infelizmente ainda não existe nenhuma cura para o novo corona vírus, só estaremos seguros quando a vacina estiver pronta, mas existem formas básicas e simples de prevenção contra esse vírus. <strong>Que são o uso de Máscara, Higienização das mãos com água e sabão ou álcool em gel, Distanciamento Social, não tocar olhos nem o nariz,etc..</strong></p>
+                
+                <p>Essas são regras básicas que todas as pessoas hoje que vivem em sociedade devem seguir. Abaixo destacaremos dois tipos de prevenções, a higienização das mãos e o uso de máscara. </p>
+                
+                <h3>Uso de Máscaras: </h3> 
+                
+                <p>A utilização de máscaras além de proteger a pessoa de vírus externos, protege as outras pessoas de contrair determinados vírus. Certifique que a sua máscara cubra o nariz, a boca e o queixo. </p>
+                
+                <h3>Higienização das mãos: </h3> 
+                
+                <p id="tratamento">Higienize as mãos, com água e sabão ou álcool 70%, antes e depois de colocar a máscara. As mãos entram em contato com várias coisas que podem possuir vírus ou bactérias. Elas podem levar esse vírus para nossos olhos, nariz ou boca, e assim transferindo para o nosso corpo fazendo com que a gente contraia determinadas doenças. 
+                </p>
+            
+                <p>Saiba mais em:</p>
+                <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public" target="_blank" class="btn"> Organização Mundial da Saúde <img src="imagens/globo.png" class="icone"></a>
+            </fieldset>
+
+            <!--Tratamentos-->
+            <fieldset>    
+                <legend><h1>Tratamentos</h1></legend>
+
+                <img src="imagens/mascara.jpg" alt="Imagem de Concientização" class="img-es">
+                
+                <p>
+                    No momento não há nenhum medicamento para a Covid-19. No caso de apresentar algum dos sintomas citados fique em casa e se isole mesmo com sintomas leves para não propagar o vírus para seus parentes ou outras pessoas,  sempre ligando para um médico para pedir instruções, peça para alguém trazer itens que você precisar nesse período de isolamento, caso você realmente precise sair de casa use uma máscara médica. <br>
+            
+                    <strong>Se você tiver febre, tosse e dificuldade para respirar procure uma assistência médica. </strong>
+                </p>
+                
+                <h3>O que é Tratamento Precoce, e por que isso não funciona? </h3>
+
+                <p> Tratamento precoce é a pessoa tratar no início uma possível infecção de Covid-19 com remédios. Porém, não existem tratamentos para a Covid-19 atualmente, os remédios que geralmente são indicados como a Hidroxicloroquina, ou a Azitromicina não possuem comprovação científica, por isso o tratamento precoce não funciona.  </p>
+
+                <p id="vacina">“Até o momento, não contamos com alternativa terapêutica aprovada e disponível para prevenir ou tratar a doença causada pelo novo coronavírus" Disse a diretora da Anvisa, Meiruze Freitas.</p>
+            </fieldset>
+
+            <!--Vacina-->
+            <fieldset>
+                  
+                <legend><h1>Vacinas</h1></legend>
+                <p>
+                    Para que tudo volte ao normal no mundo, é necessário a produção de uma vacina contra o corona vírus. Mas o que uma vacina faz? As vacinas servem para fazer com que seu organismo tenha imunidade contra uma doença particular. No mundo existem mais de 140 vacinas em produção contra o novo corona vírus, porém apenas 10 estão nas fases finais de testes. </p>
+
+                    <img src="imagens/vacinacao.jpg" alt="Imagem de Vacina" class="img-dir"  id="img-vacina">
+            
+                    <p>
+                        Para uma vacina ser considerada eficiente ela tem que passar por estágios, sendo 3 estágios necessário para a produção da vacina. Se quiser saber mais, procure na aba Perguntas sobre a covid 19, o tópico "Quais são os processos para a produção de uma vacina?" 
+                    </p>
+                    
+                    <p>
+                        Uma vacina vai possuir o vírus agressor inativo, enfraquecido, e forçar que seu organismo produza anticorpos contra esse agente invasor, e quando a pessoa se infectar de fato com o vírus, não vai causar nenhum problema, pois seu corpo vai estar preparado contra essa ameaça.
+                    </p>
+            
+                    <p>
+                        Existe também o grupo “Covax Facility”, que é uma organização liderada pela OMS e com a participação de vários países, para a produção e a disponibilização de uma vacina contra a covid-19. Essa organização foi formada para oferecer a vacina universalmente, principalmente aos países mais pobres, que não tem condições de comprar milhões de doses de uma vacina. O Brasil é um dos países que fazem parte do grupo “Covax Facility”.
+                    </p>
+                
+                <p>
+                <strong>A Inglaterra foi o primeiro país no mundo a aprovar uma vacina, a da Pfizer.</strong> 
+                </p>
+                
+                <h3>Principais vacinas no mundo: </h3>
+                    
+                <ul>
+            
+                        <li>CoronaVac</li> 
+            
+                        <li>Vacina da Pfizer</li> 
+            
+                        <li>Vacina de Oxford</li> 
+            
+                    <li>Vacina da Johnson & Johnson </li> 
+            
+                        <li>Vacina da Moderna</li> 
+                </ul>
+                
+                <h3>Mitos sobre a vacina:</h3>
+                
+                <ul>
+                    <li>"A vacina mexe com meu material genético" MENTIRA </li>
+            
+                    <li>"A vacina causa Autismo" MENTIRA </li>
+            
+                    <li>"As doenças evitáveis por vacinas estão quase erradicadas em meu país, por isso não há razão para me vacinar". MENTIRA </li>
+            
+                    <li>"Quem é saudável não precisa se vacinar" MENTIRA </li>
+                </ul>
+                
+                <h3>Grupos Prioritários de vacinação no estado de Sergipe:</h3>
+                
+                <ul>
+                    <li> Pessoas com 60 anos ou mais institucionalizadas 
+
+                    <li> Pessoas com Deficiência Institucionalizadas
+
+                    <li> Povos Indígenas Vivendo em Terras Indígenas 
+
+                    <li> Trabalhadores da Saúde 
+                        
+                    <li> Pessoas 90 anos ou mais 
+                        
+                    <li> Pessoas de 80 a 89 anos ou mais 
+                        
+                    <li> Pessoas de 75 a 79 anos 
+                        
+                    <li> Pessoas de 70 a 74 anos 
+                        
+                    <li> Pessoas de 65 a 69 anos 
+                        
+                    <li> Pessoas de 60 a 64 anos 
+                        
+                    <li> Comorbidades 
+                        
+                    <li> Povos e Comunidades Tradicionais Quilombola 
+                        
+                    <li> Pessoas com Deficiências Permanente Grave 
+                        
+                    <li> Pessoas em Situação de Rua 
+                        
+                    <li> População Privada de Liberdade 
+                        
+                    <li> Funcionário do Sistema de Privação de Liberdadea
+                        
+                    <li> Trabalhadores de Educação do Ensino Básico 
+                        
+                    <li> Trabalhadores de Educação do Ensino Superior 
+                
+                    <li> Forças de Segurança e Salvamento 
+                        
+                    <li> Forças Armadas 
+                        
+                    <li> Caminhoneiros 
+                        
+                    <li> Trabalhadores de Transporte Coletivo Rodoviário Passageiros Urbano e de Longo Curso 
+                        
+                    <li> Trabalhadores de Transporte Metroviário e Ferroviário
+                        
+                    <li> Trabalhadores de Transporte Aéreo 
+                        
+                    <li> Trabalhadores Portuários 
+                        
+                    <li> Trabalhadores de Transporte de Aquaviário 
+                        
+                    <li> Trabalhadores Industriais 
+                </ul> 
+                
+                <p id="perguntas">Por isso a vacinação é importante, pois não protege somente a você, protege todos ao seu redor. Mantenham a carteirinha de vacinação atualizada e informe a verdade para as pessoas sobre as vacinas. </p>
+
+                <p>Saiba mais em:</p>
+                <a href="https://bvsms.saude.gov.br/bvs/publicacoes/cart_vac.pdf" target="_blank" class="btn"> Cartilha de Vacinação <img src="imagens/globo.png" class="icone"></a>
+
+                <a href="https://todoscontraocorona.net.br/wp-content/uploads/2021/02/Plano-Imunizacao-Preliminar_em-atualizacao_12fev-1.pdf" class="btn" target="_blank"> Plano de vacinação do estado de Sergipe <img src="imagens/globo.png" class="icone"></a>
+            </fieldset>
+            
+            <!--Perguntas Covid-->
+            <fieldset>
+
+                <legend><h1>Perguntas sobre a Covid-19</h1></legend>
+
+                
+                <!--Vacina-->
+                <h2 style="margin-top: 10px;">Vacina</h2> <hr>
+
+                <h3>Quais são os processos para a produção de uma vacina?</h3>
+
+                <p>Existem hoje mais de 150 vacinas em produção contra o novo Corona Vírus, porém para uma vacina ser realmente eficaz ela tem que passar por estágios e fases, e isso demanda tempo. Existem 3 estágios para conclusão de uma vacina.</p>
+
+                <input type="button" id="bme" value="Leia Mais" onclick="leiamais('me')" class="botaomais"> <br>
+
+                <span id="me" class="hidden"> 
+                <ul>
+
+                    <li><strong>Primeiro Estágio:</strong> Estudos pré-clínicos para saber tudo sobre o agente invasor. Como ele age no organismo, o que causa e como, e também a utilização do vírus inativo para ver como será a produção de antígenos (Anticorpos contra o vírus). Esses são os estudos inicias da vacina.</li>
+
+                    <li><strong>Segundo Estágio:</strong> Com um conhecimento mais avançado sobre o invasor, começa o segundo estágio da vacina, onde são feitos teste em laboratório com animais de pequeno porte como Roedores, Macacos, etc...</li>
+
+                    <li><strong>Terceiro Estágio:</strong> Esse é o estágio mais longo e mais complexo para produção de uma vacina, são os chamados ensaios clínicos, e são divididos em três fases.</li>
+                </ul>
+
+                    <p><strong>Fase 1 =</strong> Início dos testes em Seres Humanos, com um grupo pequeno de pessoas, para ver como será a resposta imunológica delas.</p>
+
+                    <p><strong>Fase 2 =</strong> Nessa fase é acrescentado um número maior de pessoas, e mais suscetíveis ao vírus, que são as pessoas do grupo de risco. Aqui é onde prova –se realmente a eficácia da vacina.</p>
+
+                    <p><strong>Fase 3 =</strong> Essa fase é realizada com milhares de pessoas, comparando as pessoas que receberam a dose da vacina e o placebo. E elas estão inseridas em contextos reais de contaminação do vírus.</p>
+
+                    <p>Se durante esse terceiro estágio algum paciente morrer, ou ter algum problema grave de saúde, os testes com a vacina são pausados até saber qual foi a causa da morte, e se essa morte tem relação com a aplicação da vacina. Se for comprovada que a vacina teve algum efeito para causa dessa morte, ela é encerrada e volta aos estudos Pré-Clínicos.</p>
+                    
+
+                    <p>E para todas essas vacinas serem distribuídas, devem passar pelas agências reguladoras de cada país, no caso do Brasil a Anvisa.</p>
+                    </span>
+
+                    <a href="https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(20)30773-8/fulltext?utm_campaign=tlcoronavirus20&utm_content=143976734&utm_medium=social&utm_source=twitter&hss_channel=tw-27013292" class="btnartigo" target="_bank"> Artigo sobre as Vacinas <img src="imagens/artigo.png" class="icone"></a>
+
+                    <h3>Quais são as vacinas mais avançadas no mundo atualmente?</h3>
+
+                    <p>Atualmente no mundo existem 10 vacinas na fase três contra o novo Corona vírus, sendo 5 as mais repercutidas. A vacina de Oxford, A vacina Sputnik (Russa), A CoronaVac, A da Pfizer e a Johnson & Johnson.</p>
+                
+                    <input type="button" id="bmv" value="Leia Mais" onclick="leiamais('mv')" class="botaomais">
+                
+                    <span id="mv" class="hidden">
+                    <p><strong>A Vacina de Oxford:</strong> Essa vacina é feita pela universidade de Oxford em parceria com a AstraZeneca, na Inglaterra. Ela recebeu a eficácia de 64 a 90 porcento de proteção contra a Covid-19. A vacina de Oxford tem parceria com a Fiocruz, que vai produzir a vacina aqui no Brasil. Essa vacina já foi aprovada no Brasil.</p>
+
+                    <p><strong>A Vacina Sputnik V (Russa):</strong> Essa vacina é muito polêmica na sociedade científica internacional, pois é uma vacina feita do “dia pra noite”, sem passar corretamente pelos estágios de uma vacina, citados anteriormente, o que compromete a eficácia dela. Essa vacina deve ser comprada pelo estado do Paraná se for aprovado pela Anvisa, e já foi aprovada em países vizinhos como a Argentina.</p>
+
+                    <p><strong>A CoronaVac:</strong> A vacina da empresa Sinovac, que também é conhecida como a vacina Chinesa é cercada de opiniões controversas. Algumas pessoas são contrarias a essa vacina porque foi criada na China, ou também porque o governo brasileiro não é simpático ao governo Chinês. Porém é uma vacina comprovada pela Anvisa e certificadas por órgãos internacionais. A CoronaVac será produzida no Brasil pelo instituto Butantan, e foi comprada pelo estado de São Paulo e pelo Ministério da Saúde, que irá distribuir para os demais estados brasileiros.</p>
+
+                    <p><strong>A Pfizer</strong>: A vacina da Pfizer é feita em parceria com a Biontech e a Fosun Pharma, resultados indicam que é uma vacina segura, e produz anticorpos contra o vírus. Em testes no Brasil, no Estado da Bahia e em São Paulo. Foi a primeira vacina do mundo a ser aprovada, pelo governo da Inglaterra, e depois outros países aprovaram o uso dessa vacina, como os Estados Unidos.</p>
+
+                    <p><strong>Johnson & Johnson:</strong> É a vacina que o governo dos Estados Unidos está investindo, uma vacina avançada e que o transporte é mais fácil, já que não precisa ficar em baixas temperaturas para ser preservadas, além de ser uma vacina aplicada somente em uma dose, o que agiliza o processo de imunização.</p> </span>
+
+                    <h3>A vacina para influenza pode proteger também contra a Covid-19?</h3>
+
+                    <p>Apesar de os sintomas serem semelhantes, a Influenza e a Covid-19 são gerados por vírus diferentes,
+                    ou seja, a vacina para a influenza não age contra o vírus da Covid.</p>
+                
+                    <img src="imagens/perguntas vacinas-img.jpg" alt="Vacinação" class="img-meio" >
+
+                    <h3>5 Mentiras sobre as vacinas:</h3>
+
+                    <ol type="1">
+                        <li>“As vacinas contêm mercúrio, que é perigoso”</li>
+
+                        <li>“Vacinas são um instrumento de controle da indústria farmacêutica”</li>
+
+                        <li>“Não há evidências que as vacinas sejam seguras e eficazes”</li>
+
+                        <li>“Quem é saudável não precisa se vacinar”</li>
+
+                        <li>“A Vacina mexe com meu material genético”</li>
+                    </ol>
+                    
+                    <input type="button" id="bmm" value="Leia Mais" onclick="leiamais('mm')" class="botaomais">
+                
+                </br>
+                <span id="mm" class="hidden">
+                        <ol type="1">
+                            <li style="margin-bottom: 10px;">Mito, o tiomersal é um composto orgânico, que contém mercúrio, adicionado a algumas vacinas como conservantes. É o conservante mais utilizado para vacinas que são fornecidas em frascos multidose. Não existe evidência que sugira que a quantidade de tiomersal utilizada nas vacinas represente um risco para a saúde. Fonte: Ministério da Saúde.</li>
+    
+                            <li style="margin-bottom: 10px;">Isso é pura invenção das pessoas que pensam em teoria da conspiração, a vacina trouxe vários avanços para a medicina e erradicou várias doenças, como a varíola.</li>
+    
+                            <li style="margin-bottom: 10px;">Mito, as vacinas passam por rigorosas fases de aprovação, e são testadas em pessoas que estão em situação de perigo frente ao vírus. Então para uma vacina ser aprovada ela deve comprovar a sua eficácia.</li>
+    
+                            <li style="margin-bottom: 10px;">Mito, a todo momento surge novas doenças, e as vacinas servem justamente para manter as pessoas saudáveis e livres dessas doenças. </li>
+    
+                            <li style="margin-bottom: 10px;">Mito, a vacina vai fazer com que seu organismo produza anticorpos contra o vírus, não afetando em nada o seu material genético</li>
+                        </ol>
+                    </span>
+
+                    <p>Para saber mais procure pela aba <a href="#vacina"> <em> “Vacinas” </em></a></p>
+
+                
+                    <!--Isolamento-->
+                    <h2 style="margin-top: 10px;">Isolamento</h2> <hr>
+
+                    <h3>Por que não são apenas as pessoas do grupo de risco que precisam ficar isoladas?</h3>
+
+                    <p>Porque mesmo não sendo do grupo de risco, a pessoa continua com o vírus no corpo, transmitindo para muitas outras pessoas, fazendo com que o vírus se espalhe cada vez mais rápido. E com o isolamento conseguimos diminuir essa grande quantidade de contágio.</p>
+                    
+
+                    <h3>Quais as diferenças entre isolamento vertical, horizontal e lockdown?</h3>
+
+                    <p><strong>Isolamento vertical:</strong> Onde apenas uma parcela da população com maior risco de desenvolver a doença ou complicações dela é isolada. Significando isolar pessoas que pertencem aos grupos de risco para a covid-19.</p>
+
+                    <p><strong>Isolamento horizontal:</strong> Onde o maior número possível de pessoas deve ficar dentro de casa, independentemente de apresentarem fatores de risco ou não para a doença.</p>
+
+                    <p><strong>Lockdown:</strong> Ficando apenas as atividades consideradas essenciais (como farmácias e supermercados) são mantidas em funcionamento normal. Podendo haver um monitoramento das ruas pela polícia.</p>
+
+                    <h3>Qual é a importância do confinamento em retardar a transmissão da COVID-19?</h3>
+
+                    <p>A finalidade do confinamento é diminuir a probabilidade de que pessoas não infectadas entrem em contato com pessoas infectadas ou superfícies contaminadas pelo coronavírus. Diminuindo a oportunidade de disseminação do vírus, com uma possível desaceleração e consequentemente controlando a pandemia.</p>
+
+                    <img src="imagens/Isolamento.jpeg"  class="img-meio">
+
+                    <p>Abaixo, segue um artigo explicando o que o isolamento causou na vida de pessoas da Austrália</p>
+
+                <a href="https://www.sciencedirect.com/science/article/abs/pii/S0196655320308373" class="btnartigo" target="_blank"> Artigo Isolamento <img src="imagens/artigo.png" class="icone"></a> 
+               
+                <!--Tempo-->
+                    <h2 style="margin-top: 10px;">Tempo</h2><hr>
+
+                    <h3>Qual é o tempo de incubação do novo coronavírus?</h3>
+
+                    <p>Inicialmente os pesquisadores tinham uma estimativa de que o tempo para a incubação era de aproximadamente 4 ou 5 dias. Porém, estudando uma média de 1080 pessoas chegou-se à conclusão de que o período de incubação é de, em média, uma semana(sete dias), mas algumas pessoas podem desenvolver em menos tempo, como dois dias após o contato com o vírus ou em mais tempo, podendo chegar até 14 dias após o contanto com o vírus.</p>
+                    
+                    <a href="https://www.sciencedirect.com/science/article/pii/S1341321X20302099" class="btnartigo" target="_blank"> Artigo sobre o tempo de Incubação do novo coronavírus <img src="imagens/artigo.png" class="icone"></a>
+
+                    <h3>Quanto tempo a Covid-19 permanece ativo em diferentes superfícies?</h3>
+
+                    <p>As partículas virais liberadas junto com a saliva podem permanecer flutuando no ar por cerca de 40 minutos e até 2h30min.</p>
+
+                    <p><strong>Plásticos e aço inoxidável</strong> - 72 h</p>
+
+                    <p> <strong>Papelão</strong> - 24h </p>
+
+                    <p> <strong>Cobre</strong> - 4h </p>
+
+                    <p>A quantidade de vírus existentes nas superfícies vai diminuindo com o passar das horas, reduzindo o risco de contaminação. O mais importante é evitar tocar em superfícies com as quais um número grande de pessoas teve contato. Incluindo mesas, bancadas, maçanetas, interruptores, telefones, teclados, torneiras etc.</p>
+
+                    <p>Abaixo temos dois artigos científicos sobre tempo do vírus em diferentes superfícies, um estudo mostrando dados estatísticos e outro explicando qual o tempo em diferentes temperaturas.</p>
+
+                    <a href="https://www.nejm.org/doi/full/10.1056/nejmc2004973" target="_blank" class="btnartigo">  Presença do vírus em superfícies <img src="imagens/artigo.png" class="icone"></a> 
+                    
+                    <a href="https://virologyj.biomedcentral.com/articles/10.1186/s12985-020-01418-7" target="_blank" class="btnartigo"> Presença do vírus em superfícies pela temperatura <img src="imagens/artigo.png" class="icone"></a>
+                
+                <!--Geral-->
+                    <h2 style="margin-top: 10px;">Geral</h2><hr>
+
+                    <h3>Quais são os remédios recomendados para o tratamento da covid-19?</h3>
+
+                    <p>Atualmente não há nenhum medicamento capaz de tratar ou prevenir o novo coronavírus. Alguns remédios foram estudados para ver se tinham alguma ação contra o coronavírus, como a Hidroxicloroquina ou Cloroquina e a Remdesivir, porém, nenhuma das duas foram comprovadas.</p>
+
+                    <input type="button" id="bmr" value="Leia Mais" onclick="leiamais('mr')" class="botaomais"> <br>
+                        
+                        <span id="mr" class="hidden">
+                        <p>A Cloroquina não apresentou um bom resultado, além de causar problemas cardíacos graves ao seu uso. A Remdesivir nos estudos clínicos conseguiu impedir a multiplicação do SARS-coV-2, mas quando foi para a prática teve resultados conflitantes em dois países, o que impediu a comprovação do remédio no combate ao vírus.</p>
+    
+                        <p>Outros remédios como o Lopinavir – Ritonavir que são antivirais contra o HIV, não são eficazes contra a covid-19, o que foi comprovado em testes clínicos.</p>
+                        </span>
+
+                        <a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2012410?query=featured_coronavirus" class="btnartigo" target="_blank"> Artigo sobre Hidroxicloroquina <img src="imagens/artigo.png" class="icone"></a> 
+                        
+                        <a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2007764" class="btnartigo" target="_blank"> Artigo sobre a Remdesivir <img src="imagens/artigo.png" class="icone"></a>
+
+                    <h3>O que é OMS?</h3>
+
+                    <p>OMS é a Organização Mundial da Saúde, criada em 7 de abril de 1948 como um ramo da ONU, sua função é aconselhar os países em questões relacionadas a saúde e combater problemas de saúde a nível internacional. Sua sede fica em Genebra na Suíça, e o seu diretor geral é, desde 2017, o Etíope Tedros Adhanom.</p>
+
+                    <img src="imagens/oms.jpeg" class="img-meio" alt="Imagem da logo da OMS">
+                    
+                    <h3>Quais são os países que estão sofrendo mais com a pandemia?</h3>
+
+                    <p>Os Estados Unidos é o país com maior número de casos e mortes de covid-19 no mundo, sendo o país mais afetado com a pandemia, e o Brasil o segundo país mais afetado. Os continentes mais afetados foram o continente Americano e a Europa. Segue abaixo os países com mais números de casos e mortes por covid.</p>
+
+                    <input type="button" id="bmp" value="Leia Mais" onclick="leiamais('mp')" class="botaomais">
+                    
+                    <span id="mp" class="hidden">
+                        <p>No momento esses são os países com maior média de mortes:</p>
+    
+                        <ol type="1">
+                            <li>Estados Unidos </li>
+    
+                            <li>Brasil</li>
+    
+                            <li>Índia</li>
+    
+                            <li>Reino Unido</li>
+    
+                            <li>Rússia</li>
+                        </ol>
+    
+                        <p style="margin-top: 7px;">No momento esses são os países com maior média de casos:</p>
+                        <ol type="1">
+                            <li>Estados Unidos </li>
+    
+                            <li>Índia</li>
+    
+                            <li>Brasil</li>
+    
+                            <li>Reino Unido</li>
+    
+                            <li>Rússia</li>
+                        </ol>
+    <br>
+                    </span>
+                    <p>Saiba Mais em:</p>
+                    <a href="https://todoscontraocorona.net.br/" class="btn" target="_blank">Acompanhe em tempo real como está a Covid em Sergipe, no Brasil e no mundo.<img src="imagens/globo.png" class="icone"></a>
+
+                    <h3>O que é imunidade de rebanho?</h3>
+                    
+                    <p>Também conhecida como imunidade coletiva, a imunidade de rebanho é uma técnica de imunização que torna uma parcela da população imune ao vírus, ou seja, essas pessoas desenvolvem anticorpos contra o vírus. E essa parcela da população imune age como uma "barreira", protegendo a população como um todo, mesmo que outras pessoas ainda não estejam imunizadas.</p>
+
+                    <p>Essa imunização coletiva pode vim de dois modos, através da vacinação ou naturalmente, quando grande parte da população já se infectou e desenvolveu anticorpos naturalmente. </p>
+
+                    <h3>Quais são os melhores testes para identificar a covid-19?</h3>
+
+                    <p>No mundo há diversos tipos de testes para identificação do SARS-CoV-2 e a testagem é essencial para detectarmos quem possui o vírus e isola-lo, assim diminuindo o contágio e a duração da pandemia. O teste mais recomendado para identificação do covid-19 é do tipo RT-PCR, que identifica se a pessoa tem ou já teve a covid. Esse teste ocorre com um Swab (semelhante a um cotonete) que é colocado no nariz e vai até a região da nasofaringe.</p>
+
+                    <input type="button" id="bmt" value="Leia Mais" onclick="leiamais('mt')" class="botaomais">
+                    
+                    <span id="mt" class="hidden">
+                    <p>O tipo RT-PCR é o mais usado no mundo e recomendado pela OMS, por ser um teste rápido, seguro e com grande eficácia em identificar o vírus no organismo.</p>
+
+                    <p>Existem mais tipos de testes como o Sorológico (Que utiliza o sangue para identificar o vírus) e os testes rápidos de antígenos e anticorpos.</p>
+                    </span>
+
+                    <h3>Onde posso fazer os testes RT-PCR?</h3>
+
+                    <p>O RT-PCR é feito nos atendimentos hospitalares, públicos ou privados, e está disponível nas principais redes de laboratórios privados. Tem cobertura dos planos de saúde para pacientes depois do oitavo dia do aparecimento de sintomas, desde que haja pedido médico.</p>
+                    
+                    <p>Fonte: <a href="https://saude.abril.com.br/medicina/testes-do-novo-coronavirus/" target="_blank"> Veja Saúde</a></p>
+
+                    <img src="imagens/vacinação covid.jpg" class="img-meio" >
+
+                    <h3>A diferença entre gripe e Covid-19?</h3>
+
+                    <p>Todas as duas infecções atingem o sistema respiratório, existem alguns sintomas que são exclusivos de um, por exemplo na Covid-19 é possível que a pessoa tenha falta de ar, já se for uma gripe isso é muito raro, ou nariz entupido, na covid-19 é raro ficar com o nariz entupido, geralmente acontece mais em crianças, na gripe isso pode ocorrer com muita frequência.</p>
+
+                    <p>Segundo pesquisas, o Corona Vírus tende a ser mais contagioso do que a gripe, e também mais letal. As prevenções para os dois seguem as mesmas, lavar as mãos, não ficar tocando olhos e boca, etc.</p>
+
+                    <p>Além disso existe a diferença entre as famílias dos vírus, a covid faz parte da família dos coronas vírus e é uma Síndrome Respiratória Aguda Grave (SARS-CoV). Já a gripe faz parte da família do vírus da Influenza.</p>
+
+                    <p>Mas todas essas recomendações não podem substituir uma consulta médica, então se você tem suspeita que contraiu o novo coronavírus procure um médico e faça a testagem.</p>
+
+                    <a href="https://www.sciencedirect.com/science/article/pii/S2213260020305270" class="btnartigo" target="_blank"> Comparação entre Gripe e Covid-19 <img src="imagens/artigo.png" class="icone"></a> 
+                        
+                    <h3>Como é feito o diagnóstico do coronavírus?</h3>
+
+                    <p><strong>Diagnóstico Clínico:</strong> É realizado por um médico que irá verificar a presença do vírus, principalmente, em pessoas com os <a href="#sintomas"><em>sintomas mais comuns</em></a>.</p>
+
+                    <p>Em crianças, verifica-se também a obstrução nasal (Nariz entupido), falta de apetite e a desidratação.</p>
+
+                    <p>Em idosos, deve-se atentar também a sintomas como desmaio, perca temporária de consciência, sonolência, falta de apetite e/ou irritabilidade.</p>
+
+                    <p><strong>Diagnóstico Laboratorial:</strong> Apresentando-se os sintomas respiratórios e febre ou SRAG (Síndrome Respiratória Aguda Grave), o profissional pedirá para realizar alguns exames laboratoriais, como:</p>
+                    <p>De biologia molecular (RT-PCR em tempo real) que detecta a presença do Vírus Sindical Respiratório (VSR), geralmente até o oitavo dia após o início dos sintomas.</p>
+
+                    <p>Imunológico, que verifica a presença de anticorpos.</p>
+
+                    <p>Imunocromatografia (teste rápido), para detectar os anticorpos.</p>
+
+                    <h3>A pessoa pode transmitir o coronavírus mesmo sem apresentar sintoma?</h3>
+
+                    <p>Existem pessoas denominadas de assintomáticas, ou seja, não apresenta os sintomas de determinadas doenças, como o Covid-19. Mesmo não apresentando os sintomas, o vírus se multiplica através de nossas células e a pessoa continua com o vírus em seu corpo, podendo assim, transmitir SIM o vírus para outras pessoas.</p>
+
+                    <h3>Qual a relação da Covid-19, com o vírus Sars e Mers?</h3>
+
+                    <p>A síndrome respiratória aguda grave (SARS) foi, assim como a Covid-19, detectada na China em 2002,
+                    gerando um surto mundial. Desde 2004 nenhum caso foi relatado no mundo e consideraram a doença
+                    (NÃO O VÍRUS) erradicada.</p>
+                    
+                    <p>A Síndrome Respiratória do Oriente Médio (MERS) foi detectada inicialmente na Jordânia e na Arábia
+                    Saudita em 2012. Um surto de MERS aconteceu na Coreia do Sul em 2015 envolvendo cerca de 180 casos e 36 mortes.</p>
+
+                    <p>A SARS e a MERS são doenças geradas a partir do vírus coronavírus (Assim como a Covid-19), possuindo sintomas semelhantes
+                    aos do resfriado e sendo transmitidas de pessoa para pessoa por contatos ou gotículas geradas pela
+                    tosse ou espirros de alguém infectado.</p>
+
+                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S1198743X20301713" class="btnartigo" target="_blank"> Artigo sobre a relação entre  Covid-19, Sars e Mers <img src="imagens/artigo.png" class="icone"></a> 
+
+                    <h3>Qualquer hospital pode receber pacientes com Covid-19?</h3>
+
+                    <p>É necessário diferenciar os casos graves dos leves. Os casos graves devem ir para um hospital, de preferência estadual, para receber os devidos cuidados e tratamentos, já nos casos mais leves, que provavelmente não precisará ser hospitalizado, serão acompanhados pela Atenção Primária e será passada as medidas de precaução domiciliar.</p>
+
+                    <input type="button" id="bmh" value="Leia Mais" onclick="leiamais('mh')" class="botaomais">
+
+                    <span id="mh" class="hidden">
+
+                    <p>Lista dos hospitais que prestam atendimento (Casos graves):</p>
+
+                    <p><a href="http://coronavirus.saude.gov.br/images/pdf/2020/marco/03/Hospitais-estaduais-CORONAV--RUS.pdf" target="_blank">Hospitais casos graves</a></p>
+
+                    <p>Lista de Unidades de Básicas de Saúde que prestam atendimento em seu município (Casos leves):</p>
+
+                    <p><a href="http://coronavirus.saude.gov.br/images/pdf/2020/marco/03/Unidades-B--sicas-de-Sa--de-CORONAV--RUS.pdf" target="_blank">Hospitais casos leves</a></p>
+
+                    </span>
+                    
+                    <img src="imagens/hospital.jpg"  class="img-meio">
+       
+                <h3>Por que a doença causada pelo novo vírus recebeu o nome de Covid-19?</h3>
+
+                    <p>Covid-19 é uma palavra gerada a partir do COrona VÍrus Diase (Doença do Coronavírus), já o "19" faz referência ao ano em que se ocorreu os primeiros casos em Wuhan, na China.</p>
+
+                    <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7124603/" class="btnartigo" target="_blank"> Artigo sobre o nome Covid-19 <img src="imagens/artigo.png" class="icone"></a>
+
+                    <h3>Quem mora com pessoas consideradas do grupo de risco também pode ser classificado como do grupo de risco?</h3>
+
+                    <p>Mesmo morando com uma pessoa do grupo de risco, você não será do grupo de risco. Porém, ao morar com uma pessoa do grupo de risco é necessário ter muito mais cuidado que o normal, principalmente com essa pessoa, pois a Covid-19 é transmitida através do contato. Por isso é sempre bom seguir os métodos de prevenção para evitar possíveis transtornos.</p>
+                    
+                    <h3>Qual é a orientação para viajantes que retornam de viagem internacional ou nacional?</h3>
+
+                    <p>É recomendado ficar imediatamente em isolamento domiciliar por, no mínimo, 14 (quatorze) dias,
+                    mesmo que nenhum sintoma tenha sido manifestado, pois os sintomas podem demorar um pouco para surgirem. Caso tenha febre ou tosse ou dificuldade para respirar, ligue 136 ou procure um posto de saúde e informe o seu histórico de viagem. E isso também depende de país para país.</p>
+
+                    <img src="imagens/aeroporto.jpg" class="img-meio">
+
+                    <h3>Quais são as pessoas consideradas como grupo de risco?</h3>
+
+                    <p>Pessoas com problemas respiratórios, fumantes de muito tempo, anemia falciforme, hipertensos, diabéticos, pessoas com doenças crônicas, obesos e idosos.</p>
+
+                    <a href="https://www.sciencedirect.com/science/article/pii/S2049080120304301" class="btnartigo" target="_blank"> Artigo sobre Pessoas do Grupo de Risco <img src="imagens/artigo.png" class="icone"></a>
+                    
+                    <h3>Como posso fortalecer minha imunidade para me proteger do novo coronavírus?</h3>
+
+                    <p>Praticando exercícios físicos, mantendo uma alimentação saudável, não fumar, não ingerir bebidas alcoólicas, não usar drogas, podendo fazer sim as coisas que devemos fazer, mas sempre com a total segurança, usando máscara e álcool em gel.</p>
+
+                    <a href="https://www.sciencedirect.com/science/article/pii/S1876034120305670" class="btnartigo" target="_blank"> Artigo sobre o Sistema Imunológico e como a Covid-19 age sobre ele <img src="imagens/artigo.png" class="icone"></a>
+
+                    <h3>Como se prevenir contra a Covid-19? </h3>
+
+                <ul>
+
+                    <li>Lavar as mãos em especial antes de comer e após tossir ou espirrar.</li>
+
+                    <li>Caso não tenha água e sabão, usar desinfetante para as mãos a base de álcool.</li>
+
+                    <li>Evitar tocar nos olhos, nariz e boca com as mãos não lavadas;</li>
+
+                    <li>Usar lenço descartável para higiene nasal;</li>
+
+                    <li>Cobrir nariz e boca ao espirrar ou tossir com um lenço de papel descartável ou com a parte interna
+                    do cotovelo (nunca as mãos);</li>
+
+                    <li>Não compartilhar objetos de uso pessoal, como talheres, pratos, copos ou garrafas;</li>
+
+                    <li>Manter os ambientes bem ventilados;</li>
+
+                    <li>Limpar e desinfetar objetos e superfícies tocados com frequência, como celulares;</li>
+
+                    <li>Evitar contato com pessoas que não estejam no seu convívio muito próximo;</li>
+
+                    <li>Evitar sair de casa;</li>
+
+                    <li>Se precisar sair, usar máscara (comprada ou caseira) como medida de proteção coletiva;</li>
+
+                    <li>Evitar locais de aglomeração;</li>
+
+                    <li>Pessoas doentes devem permanecer em casa e, caso a doença se agrave, procurar a unidade básica
+                    de saúde;</li>
+
+                    <li>Grupos vulneráveis: como idosos, crianças, gestantes, pessoas com doenças crônicas ou com
+                    imunodeficiência, devem ficar mais atentos às manifestações clínicas;</li>
+
+                    <li>Profissionais de saúde devem utilizar medidas de precaução padrão, de contato e de gotículas
+                    (máscara cirúrgica, luvas, avental não estéril e óculos de proteção).</li>
+
+                </ul>
+            </br>
+                    <p><strong>Fonte:</strong><a href="https://portal.fiocruz.br/pergunta/como-se-prevenir-contra-o-coronavirus" target="_blank"> Portal Fiocruz<a></p>
+
+                    <h3>Animais de estimação podem contrair COVID-19 ou transmitir a doença para pessoas?</h3>
+
+                    <p>A chance de animais domésticos contraírem o novo coronavírus é praticamente nula. Em todo o mundo há menos de 25 relatos de cães e gatos que contraíram o Sars-CoV-2 e nenhum relato oficial de animais que tenham transmitido para seus donos ou tutores.</p>
+
+                    <p>Porém ainda faltam muitas informações, e os estudos sobre a infecção da covid-19 em animais está bem no início, com poucos estudos científicos sobre. Abaixo temos um dos poucos artigos publicados e relevantes sobre a covid-19 em animais domésticos.</p>
+
+                    <a href="https://science.sciencemag.org/content/368/6494/1016" class="btnartigo" target="_blank"> Covid-19 em Animais <img src="imagens/artigo.png" class="icone"></a>
+                    
+                    <img src="imagens/animais de estimação.jpg" class="img-meio">
+
+                    <h3>Os pacientes que se recuperam da infecção clínica pela COVID-19 ficam imunes?</h3>
+
+                    <p>É muito precoce para saber se os títulos de anticorpos serão adequados para induzir a imunidade contra a repetição da infecção e, em caso positivo, por quanto tempo. Estudos realizados sobre outras infecções por corona vírus em humanos mostraram que a imunidade às cepas que causam os resfriados normalmente dura apenas alguns meses.</p>
+
+                    <p>Entretanto, já tivemos alguns casos de reinfecção registrados no mundo, incluindo no Brasil. Segue o link para a reportagem do G1 sobre reinfecção no Brasil.</p>
+
+                    <a href="https://www.google.com/amp/s/g1.globo.com/google/amp/rn/rio-grande-do-norte/noticia/2020/12/09/rn-tem-o-primeiro-caso-confirmado-de-reinfeccao-por-coronavirus-do-brasil-diz-governo.ghtml" target="_blank" class="btn"> Primeiro caso de reinfecção <img src="imagens/globo.png" class="icone"></a>
+
+                    <p style="margin-top: 10px;">E abaixo temos dois artigos científicos sobre a reinfecção com o novo coronavírus.</p>
+
+                    <a href="https://www.journalofinfection.com/article/S0163-4453(20)30546-6/fulltext" target="_blank" class="btnartigo"> Reinfecção <img src="imagens/artigo.png" class="icone"></a>
+
+                    <a href="https://www.nejm.org/doi/full/10.1056/NEJMc2025179?query=recirc_curatedRelated_article" target="_blank" class="btnartigo"> Perda de Anticorpos <img src="imagens/artigo.png" class="icone"></a>
+
+                    <h3>O que são portadores assintomáticos?</h3>
+
+                    <p>São aqueles que tem algum exame positivo para a doença e não apresenta nenhum sintoma, porém podem transmitir o vírus.</p>
+
+                    <a href="https://www.sciencedirect.com/science/article/pii/S0045782520305958" target="_blank" class="btnartigo"> Artigo sobre Portadores Assintomáticos <img src="imagens/artigo.png" class="icone"></a>
+
+                    <h3>Por que máscaras são importantes para frear o avanço da Covid-19?</h3>
+
+                    <p>Para evitar o contágio através de saliva para a boca ou nariz, que são regiões abertas do corpo onde pode ocorrer a entrada do vírus da covid-19 e o contágio no organismo.</p>
+
+                    <img src="imagens/máscaras2.jpg" class="img-meio">
+
+                    <h3>Como a Covid-19 é transmitida?</h3>
+                    
+                    <p>A transmissão acontece de uma pessoa doente para outra ou por contato próximo por meio de:</p>
+                    <ul>
+                        <li>Toque do aperto de mão contaminadas;
+                        <li>Gotículas de saliva;
+                        <li>Espirro;
+                        <li>Tosse;
+                        <li>Catarro;
+                        <li>Objetos ou superfícies contaminadas, como celulares, mesas, talheres, maçanetas, brinquedos, teclados de computador etc.
+                    </ul>
+                    <p>Fonte: Ministério da Saúde</p> <br>
+                    
+                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S2468045120300481" target="_blank" class="btnartigo">Artigo sobre Transmissão <img src="imagens/artigo.png" class="icone"></a>
+
+            </fieldset>
+            
+            <fieldset>
+                <legend><h1>Deixe o seu comentário</h1></legend>
+                <p id="time"> </p>
+
+                <!--Facebook Comment-->
+                <article id="facebook" style="margin-top: 10px;">
+
+                    <div data-anime="left" id="fb-root"></div>
+
+                    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v10.0" nonce="S1vJAHrh"> window.scroll()</script>
+    
+                    <div data-anime="left" class="fb-comments" data-href="https://fatoscovid.000webhostapp.com/" data-width="500" data-numposts="30"></div>
+                    
+                </article>
+            </fieldset>
+
+        </div>
+
+        <footer>
+            <div id="dir">
+                &COPY; Todos os direitos reservados  <br> <br>
+                <img src="imagens/logo-ifs.png" class="logo-ifs">
+            </div>
+
+            <div id="es">
+                Andrielysson Barbosa 
+                <a href="https://www.instagram.com/gaspar3651_/" target="_blank"> <img src="imagens/insta.png" class="icone"> </a> <br> <br>
+                
+                Leonardo Alexandre 
+                <a href="https://www.instagram.com/leonardo._.barreto/" target="_blank"> <img src="imagens/insta.png" class="icone"> </a> <br> <br>
+                
+                Vitor Vieira Carvalho 
+                <a href="https://www.instagram.com/vitorcarvalho968/" target="_blank"> <img src="imagens/insta.png" class="icone"> </a> <br> <br>
+            </div>
+        </footer>
+        
+
+        
+
+    <script src="index.js"></script>
+</body>
+</html>
