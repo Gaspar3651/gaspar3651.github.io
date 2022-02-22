@@ -292,4 +292,9 @@ p {
     width: 30%;
     margin-bottom: 0;
   }
+
+  #video{
+    width: 560px;
+    height: 315px;
+  }
 }
