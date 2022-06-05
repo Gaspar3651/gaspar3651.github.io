@@ -1842,9 +1842,26 @@ responsive
 
 }
 
+#clik{
+	text-align: center;
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.556);
+}
 
 #unica{
-  z-index: -1000;
-  display: none;
-  margin: auto;
+  	position: relative;
+  	z-index: 10;
+	display: none;
+  	margin: 15px auto auto auto;
+}
+
+#voltar{
+	text-align: center;
+	display: block;
+	cursor: pointer;
+	position: relative;
+	color: #eee;
+	background-color: rgb(200, 0, 0);
+	margin: auto;
+	padding: 4px;
 }
