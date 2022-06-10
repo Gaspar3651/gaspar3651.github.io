@@ -146,13 +146,17 @@ https://templatemo.com/tm-569-edu-meeting
     function mostrar(){
       cont++;
       if(cont%2 == 1){
+        var btn = document.querySelector("#unica");
+        btn.classList.remove("aos-animate");
         document.getElementById('unica').style.display = 'block';
         AOS.init();
       }else{
         var btn = document.querySelector("#unica");
         btn.classList.remove("aos-animate");
+        setTimeout(function(){
+          document.getElementById('unica').style.display = 'none';
+        },1000)
       }
-      
     }
   </script>
 
