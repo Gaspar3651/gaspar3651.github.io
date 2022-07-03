@@ -53,7 +53,7 @@ p {
   background: #42A8C0;
   position: absolute;
   right: 0;
-  width: 250px;
+  width: 240px;
   height: 100%;
   min-height: 800px;
   color: #fff;
@@ -265,14 +265,6 @@ p {
   color: #fb866a;
 }
 
-.tecnologias ul{
-  width: 50%;
-}
-.tecnologias{
-  display: flex;
-  justify-content: space-around;
-}
-
 @media (max-width: 767.98px) {
   .sidebar-wrapper {
     position: static;
@@ -291,14 +283,6 @@ p {
 
   .main-wrapper .upper-row {
     margin-bottom: 0;
-  }
-
-  .tecnologias ul{
-    margin-top: -14px;
-    width: 100%;
-  }
-  .tecnologias{
-    display: block;
   }
 }
 @media (min-width: 992px) {
