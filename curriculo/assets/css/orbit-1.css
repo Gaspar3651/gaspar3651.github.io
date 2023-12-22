@@ -39,6 +39,7 @@ a:focus {
 p {
   line-height: 1.5;
   text-align: justify;
+  text-indent: 20px;
 }
 
 .wrapper {
