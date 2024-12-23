@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <h1>BATATA</h1>
+        <script type='text/javascript'>
+            import { useEffect } from 'react';
+            import CarinaSvg from '~/assets/images/carina-chat.svg';
+
+            const ChatComponent: React.FC = () => {
+            const chatConfig = {
+                avatarUrl: {
+                production: 'https://bancocarrefour.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=0688c00000Ol2jR&operationContext=DELIVERY&contentId=05T8c00001OmgDg&page=0&d=/a/8c000000YTh5/c4pxI3dpHPQFp9sjK7RNLuKnPh_x8EM0vpHdAWqm.uo&oid=00D8c000002ggmr&dpt=null&viewId=',
+                development: 'https://bancocarrefour.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=0688c00000Ol2jR&operationContext=DELIVERY&contentId=05T8c00001OmgDg&page=0&d=/a/8c000000YTh5/c4pxI3dpHPQFp9sjK7RNLuKnPh_x8EM0vpHdAWqm.uo&oid=00D8c000002ggmr&dpt=null&viewId=',
+                },
+                initUrl: {
+                production: 'https://service.force.com',
+                development: 'https://service.force.com',
+                },
+                scriptUrl: {
+                production: 'https://carrefourbrasil.my.salesforce.com/embeddedservice/5.0/esw.min.js',
+                development: 'https://carrefourbrasil--hml.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js',
+                },
+                baseCoreURL: {
+                production: 'https://carrefourbrasil.my.salesforce.com',
+                development: 'https://carrefourbrasil--hml.sandbox.my.salesforce.com',
+                },
+                communityEndpointURL: {
+                production: 'https://carrefourbrasil.my.salesforce-sites.com/',
+                development: 'https://carrefourbrasil--hml.sandbox.my.salesforce-sites.com/',
+                },
+                orgId: {
+                production: '00D6g000002gFJV',
+                development: '00D530000008izP',
+                },
+                eswConfigDevName: {
+                production: 'Atendimento_Chat_Varejo_Carrefour',
+                development: 'Atendimento_Chat_Varejo_Carrefour',
+                },
+                baseLiveAgentContentURL: {
+                production: 'https://c.la5-c2-ia4.salesforceliveagent.com/content',
+                development: 'https://c.la2-c1cs-ia6.salesforceliveagent.com/content',
+                },
+                deploymentId: {
+                production: '5728c000000Yqxb',
+                development: '572530000004JsA',
+                },
+                buttonId: {
+                production: '5738c000000YvxI',
+                development: '573De0000008OJ8',
+                },
+                baseLiveAgentURL: {
+                production: 'https://d.la5-c2-ia4.salesforceliveagent.com/chat',
+                development: 'https://d.la2-c1cs-ia6.salesforceliveagent.com/chat',
+                },
+                eswLiveAgentDevName: {
+                production: 'EmbeddedServiceLiveAgent_Parent04I8c0000000T7uEAE_18fbb3b99e9',
+                development: 'EmbeddedServiceLiveAgent_Parent04IDe000000000uMAA_193973d7677',
+                },
+            };
+
+            const handleChatClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+                window.embedded_svc.bootstrapEmbeddedService();
+            };
+
+            useEffect(() => {
+                const LOCATION_ENV = 'development';
+
+                function loadScript() {
+                if (!window.embedded_svc) {
+                    const s = document.createElement('script');
+                    s.src = chatConfig.scriptUrl[LOCATION_ENV];
+                    document.body.appendChild(s);
+                } else {
+                    window.initESW(chatConfig.initUrl[LOCATION_ENV]);
+                }
+                }
+
+                window.initESW = (gslbBaseURL: string | null) => {
+                if (!window.embedded_svc) return;
+
+                window.embedded_svc.settings.displayHelpButton = false;
+                window.embedded_svc.settings.language = 'pt-BR';
+                window.embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+                window.embedded_svc.settings.entryFeature = 'LiveAgent';
+                window.embedded_svc.settings.smallCompanyLogoImgURL = chatConfig.avatarUrl[LOCATION_ENV];
+                window.embedded_svc.settings.chatbotAvatarImgURL = chatConfig.avatarUrl[LOCATION_ENV];
+                window.embedded_svc.settings.extraPrechatFormDetails = [
+                    { label: 'Site', value: 'Site', displayToAgent: true, transcriptFields: ['Origem__c'] },
+                ];
+                window.embedded_svc.init(
+                    chatConfig.baseCoreURL[LOCATION_ENV],
+                    chatConfig.communityEndpointURL[LOCATION_ENV],
+                    gslbBaseURL,
+                    chatConfig.orgId[LOCATION_ENV],
+                    chatConfig.eswConfigDevName[LOCATION_ENV],
+                    {
+                    baseLiveAgentContentURL: chatConfig.baseLiveAgentContentURL[LOCATION_ENV],
+                    deploymentId: chatConfig.deploymentId[LOCATION_ENV],
+                    buttonId: chatConfig.buttonId[LOCATION_ENV],
+                    baseLiveAgentURL: chatConfig.baseLiveAgentURL[LOCATION_ENV],
+                    eswLiveAgentDevName: chatConfig.eswLiveAgentDevName[LOCATION_ENV],
+                    isOfflineSupportEnabled: false,
+                    },
+                );
+                };
+
+                const scriptElement = document.createElement('script');
+                scriptElement.src = chatConfig.scriptUrl[LOCATION_ENV];
+                scriptElement.onload = loadScript;
+                document.head.appendChild(scriptElement);
+            });
+
+            return (
+                <>
+                <img
+                    onClick={e => handleChatClick(e)}
+                    src={CarinaSvg}
+                    alt="chat com carina"
+                    className="rounded-full fixed right-0 bottom-0 cursor-pointer"
+                />
+                </>
+            );
+            };
+
+            export default ChatComponent;
+
+        </script>
+    </body>
+
+</html>
