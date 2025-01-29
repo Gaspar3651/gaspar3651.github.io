@@ -1,137 +1,224 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>Email</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type='text/css'>
+      .embeddedServiceHelpButton .helpButton .uiButton {
+        background-color: #1E5BC6;
+        font-family: "Arial", sans-serif;
+      }
+      .embeddedServiceHelpButton .helpButton .uiButton:focus {
+        outline: 1px solid #1E5BC6;
+      }
+    </style>
+    
+  </head>
+  <body style="margin:0; padding:0; font-family:Arial, sans-serif;">
+    <table style="width:100%; border-spacing:0; padding:0; margin:0;">
+     
+      <tr>
+        <td style="text-align:center; padding:1rem;">
+          <img src="http://cdn.mcauto-images-production.sendgrid.net/63dad58d48672050/205ab58d-dd16-4ddf-952b-d8a4c1fa8970/211x55.jpg" alt="Carrefour" style="width:13rem; height:3.5rem;" />
+        </td>
+      </tr>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
+      <tr>
+        <td style="background-color:#1E5AC6; text-align:center; padding:2rem;">
+          <p style="color:#ffffff; font-weight:bold; font-size:20px; margin-bottom:1rem;">
+            Protocolo de atendimento: número do caso
+          </p>
+          <p style="color:#ffffff; font-size:14px; margin:0;">
+            Referente ao Pedido número do pedido realizado em DD/MM/AAAA.
+          </p>
+        </td>
+      </tr>
 
-    <body>
-        <h1>BATATA</h1>
-        <script type='text/javascript'>
-            import { useEffect } from 'react';
-            import CarinaSvg from '~/assets/images/carina-chat.svg';
+      <tr>
+        <td style="text-align:center; padding-bottom:2rem;">
+          <table style="max-width:520px; margin:0 auto; padding:2rem; width:100%;">
+            <tr>
+              <td>
+                <p style="color:#1E5AC6; font-weight:bold; font-size:20px; margin-bottom:3rem; text-align:justify;">
+                  Olá, %%PRINOME%%!
+                </p>
+                <p style="font-size:16px; color:#454545; margin:0; text-align:justify; line-height: 22px;">
+                  Lorem ipsum dolor sit amet consectetur adipiscing elit magna
+                  laoreet, volutpat class parturient enim dui facilisi vulputate
+                  feugiat eleifend praesent, donec faucibus ridiculus phasellus
+                  conubia auctor cras facilisis.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table style="width:100%; margin:0; text-align:justify; padding-top:60px;">
+                  <tr>
+                    <td style="width:25%; vertical-align:middle;">
+                      <img src="http://cdn.mcauto-images-production.sendgrid.net/63dad58d48672050/cea838ef-4eff-44c5-b954-d3eb5dcf12e2/65x46.jpg" alt="Carrefour" style="width:5rem; height:3.5rem; margin-right:1rem;" />
+                    </td>
+                    <td>
+                      <p style="font-weight:bold; color:#454545; margin:0; line-height:22px;">Atenciosamente,</p>
+                      <p style="color:#454545; margin:0;">Atendimento Carrefour</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
 
-            const ChatComponent: React.FC = () => {
-            const chatConfig = {
-                avatarUrl: {
-                production: 'https://bancocarrefour.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=0688c00000Ol2jR&operationContext=DELIVERY&contentId=05T8c00001OmgDg&page=0&d=/a/8c000000YTh5/c4pxI3dpHPQFp9sjK7RNLuKnPh_x8EM0vpHdAWqm.uo&oid=00D8c000002ggmr&dpt=null&viewId=',
-                development: 'https://bancocarrefour.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=0688c00000Ol2jR&operationContext=DELIVERY&contentId=05T8c00001OmgDg&page=0&d=/a/8c000000YTh5/c4pxI3dpHPQFp9sjK7RNLuKnPh_x8EM0vpHdAWqm.uo&oid=00D8c000002ggmr&dpt=null&viewId=',
-                },
-                initUrl: {
-                production: 'https://service.force.com',
-                development: 'https://service.force.com',
-                },
-                scriptUrl: {
-                production: 'https://carrefourbrasil.my.salesforce.com/embeddedservice/5.0/esw.min.js',
-                development: 'https://carrefourbrasil--hml.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js',
-                },
-                baseCoreURL: {
-                production: 'https://carrefourbrasil.my.salesforce.com',
-                development: 'https://carrefourbrasil--hml.sandbox.my.salesforce.com',
-                },
-                communityEndpointURL: {
-                production: 'https://carrefourbrasil.my.salesforce-sites.com/',
-                development: 'https://carrefourbrasil--hml.sandbox.my.salesforce-sites.com/',
-                },
-                orgId: {
-                production: '00D6g000002gFJV',
-                development: '00D530000008izP',
-                },
-                eswConfigDevName: {
-                production: 'Atendimento_Chat_Varejo_Carrefour',
-                development: 'Atendimento_Chat_Varejo_Carrefour',
-                },
-                baseLiveAgentContentURL: {
-                production: 'https://c.la5-c2-ia4.salesforceliveagent.com/content',
-                development: 'https://c.la2-c1cs-ia6.salesforceliveagent.com/content',
-                },
-                deploymentId: {
-                production: '5728c000000Yqxb',
-                development: '572530000004JsA',
-                },
-                buttonId: {
-                production: '5738c000000YvxI',
-                development: '573De0000008OJ8',
-                },
-                baseLiveAgentURL: {
-                production: 'https://d.la5-c2-ia4.salesforceliveagent.com/chat',
-                development: 'https://d.la2-c1cs-ia6.salesforceliveagent.com/chat',
-                },
-                eswLiveAgentDevName: {
-                production: 'EmbeddedServiceLiveAgent_Parent04I8c0000000T7uEAE_18fbb3b99e9',
-                development: 'EmbeddedServiceLiveAgent_Parent04IDe000000000uMAA_193973d7677',
-                },
-            };
+      <tr>
+        <td style="background-color:#1E5AC6; text-align:center; padding:1rem 0 0 0;">
+          <table style="width:100%; max-width:600px; margin:0 auto;">
+            <tr>
+              <td style="width:50%; padding-right:2rem;">
+                <img src="http://cdn.mcauto-images-production.sendgrid.net/63dad58d48672050/24755305-94f1-480d-b812-d3f67df86c3e/225x112.jpg" alt="Carina" style="width:16rem; height:8rem;" />
+              </td>
+              <td style="text-align:center;">
+                <p style="color:#ffffff; margin:0 0 0.5rem 0;">
+                  Quer falar com a Carina sobre seu pedido?
+                </p>
+                <button id="btn-chat-carina" style="background-color:#ffffff; color:#1E5AC6; border-radius:0.5rem; font-weight:bold; max-width:13rem; width:100%; height:2.5rem; border:none; cursor:pointer;">
+                  Acessar Chat
+                </button>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
 
-            const handleChatClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-                window.embedded_svc.bootstrapEmbeddedService();
-            };
+      <tr>
+        <td style="text-align:center; padding:1.5rem;">
+          <p style="color:#454545; font-weight:bold; font-size:12px; margin:0; padding-bottom:3px;">
+            Atendimento:
+          </p>
+          <p style="color:#454545; font-size:12px; margin:0; padding-top:0.25rem;">
+            3004-2222 para regiões metropolitanas
+          </p>
+          <p style="color:#454545; font-size:12px; margin:0; padding-top:0.25rem;">
+            0800-718-2222 para demais localidades
+          </p>
+          <p style="color:#454545; font-size:12px; margin:0; padding-top:0.25rem;">
+            Todos os dias das 08h às 21h*
+          </p>
+          <p style="color:#454545; font-size:12px; margin:0; padding-top:0.25rem;">
+            *Horário de Brasília
+          </p>
+        </td>
+      </tr>
 
-            useEffect(() => {
-                const LOCATION_ENV = 'development';
+      <tr>
+        <td style="text-align:center; padding:1.5rem;">
+          <p style="color:#454545; font-weight:bold; font-size:12px; margin:0 0 1rem 0;">
+            Nossas redes sociais
+          </p>
+          <table style="width:100%; max-width:260px; margin:0 auto; text-align:center;">
+            <tr>
+              <td style="width:25%; padding:0 1rem;">
+                <a href="https://www.facebook.com/CarrefourBR" style="display:block;">
+                  <img src="http://cdn.mcauto-images-production.sendgrid.net/63dad58d48672050/8a92f327-2fa4-4798-8d53-c7ac6723b4fa/24x24.png" alt="Facebook" style="width:1.5rem; height:1.5rem;" />
+                </a>
+              </td>
+              <td style="width:25%; padding:0 1rem;">
+                <a href="https://www.twitter.com/CarrefourBrasil" style="display:block;">
+                  <img src="http://cdn.mcauto-images-production.sendgrid.net/63dad58d48672050/4a9f62ab-487e-4eb5-8652-4cc9e07e7507/24x24.jpg" alt="Twitter" style="width:1.5rem; height:1.5rem;" />
+                </a>
+              </td>
+              <td style="width:25%; padding:0 1rem;">
+                <a href="https://www.instagram.com/CarrefourBrasil" style="display:block;">
+                  <img src="http://cdn.mcauto-images-production.sendgrid.net/63dad58d48672050/6834b2b3-fd1c-4366-a75e-84616c8e0325/24x24.png" alt="Instagram" style="width:1.5rem; height:1.5rem;" />
+                </a>
+              </td>
+              <td style="width:25%; padding:0 1rem;">
+                <a href="https://www.youtube.com/user/CarrefourBrasil" style="display:block;">
+                  <img src="http://cdn.mcauto-images-production.sendgrid.net/63dad58d48672050/8f7bdc37-cc4c-42f1-8130-711501120718/28x28.jpg" alt="YouTube" style="width:1.5rem; height:1.5rem;" />
+                </a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
 
-                function loadScript() {
-                if (!window.embedded_svc) {
-                    const s = document.createElement('script');
-                    s.src = chatConfig.scriptUrl[LOCATION_ENV];
-                    document.body.appendChild(s);
-                } else {
-                    window.initESW(chatConfig.initUrl[LOCATION_ENV]);
-                }
-                }
+      <tr>
+        <td style="text-align:center; padding:1.5rem;">
+          <p style="color:#454545; font-weight:bold; font-size:12px; margin:0;">
+            Leia nossas políticas:
+          </p>
+          <a href="https://www.carrefour.com.br/politica-de-cancelamento-e-ressarcimento#crfimt=home|shop|rodape|Pol%C3%ADtica-de-Cancelamento-e-Ressarcimento|26062024|26" style="font-size:12px; color:#1E5AC6; text-decoration:underline; margin-top:0.5rem; display:block;">
+            Política de Cancelamentos e Ressarcimentos
+          </a>
+          <a href="https://www.carrefour.com.br/politica-de-trocas-e-devolucoes" style="font-size:12px; color:#1E5AC6; text-decoration:underline; margin-top:0.5rem; display:block;">
+            Política de Trocas e Devoluções
+          </a>
+          <a href="https://www.carrefour.com.br/termos-de-uso#crfimt=home|shop|rodape|Termos-de-Uso|26062024|30" style="font-size:12px; color:#1E5AC6; text-decoration:underline; margin-top:0.5rem; display:block;">
+            Termos e Condições de Uso
+          </a>
+        </td>
+      </tr>
+    </table>
+    <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+    <script type='text/javascript'>
+      var initESW = function(gslbBaseURL) {
+        embedded_svc.settings.displayHelpButton = true; //Or false
+        embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
 
-                window.initESW = (gslbBaseURL: string | null) => {
-                if (!window.embedded_svc) return;
+        //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+        //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
 
-                window.embedded_svc.settings.displayHelpButton = false;
-                window.embedded_svc.settings.language = 'pt-BR';
-                window.embedded_svc.settings.enabledFeatures = ['LiveAgent'];
-                window.embedded_svc.settings.entryFeature = 'LiveAgent';
-                window.embedded_svc.settings.smallCompanyLogoImgURL = chatConfig.avatarUrl[LOCATION_ENV];
-                window.embedded_svc.settings.chatbotAvatarImgURL = chatConfig.avatarUrl[LOCATION_ENV];
-                window.embedded_svc.settings.extraPrechatFormDetails = [
-                    { label: 'Site', value: 'Site', displayToAgent: true, transcriptFields: ['Origem__c'] },
-                ];
-                window.embedded_svc.init(
-                    chatConfig.baseCoreURL[LOCATION_ENV],
-                    chatConfig.communityEndpointURL[LOCATION_ENV],
-                    gslbBaseURL,
-                    chatConfig.orgId[LOCATION_ENV],
-                    chatConfig.eswConfigDevName[LOCATION_ENV],
-                    {
-                    baseLiveAgentContentURL: chatConfig.baseLiveAgentContentURL[LOCATION_ENV],
-                    deploymentId: chatConfig.deploymentId[LOCATION_ENV],
-                    buttonId: chatConfig.buttonId[LOCATION_ENV],
-                    baseLiveAgentURL: chatConfig.baseLiveAgentURL[LOCATION_ENV],
-                    eswLiveAgentDevName: chatConfig.eswLiveAgentDevName[LOCATION_ENV],
-                    isOfflineSupportEnabled: false,
-                    },
-                );
-                };
+        //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+        //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
 
-                const scriptElement = document.createElement('script');
-                scriptElement.src = chatConfig.scriptUrl[LOCATION_ENV];
-                scriptElement.onload = loadScript;
-                document.head.appendChild(scriptElement);
-            });
+        // Settings for Chat
+        //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+          // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+          // Returns a valid button ID.
+        //};
+        //embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+        //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+        //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
 
-            return (
-                <>
-                <img
-                    onClick={e => handleChatClick(e)}
-                    src={CarinaSvg}
-                    alt="chat com carina"
-                    className="rounded-full fixed right-0 bottom-0 cursor-pointer"
-                />
-                </>
-            );
-            };
+        embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+        embedded_svc.settings.entryFeature = 'LiveAgent';
 
-            export default ChatComponent;
+        embedded_svc.init(
+          'https://carrefourbrasil--hml.sandbox.my.salesforce.com',
+          'https://carrefourbrasil--hml.sandbox.my.salesforce-sites.com/',
+          gslbBaseURL,
+          '00D530000008izP',
+          'Atendimento_Chat_Varejo_Carrefour',
+          {
+            baseLiveAgentContentURL: 'https://c.la2-c1cs-ia6.salesforceliveagent.com/content',
+            deploymentId: '572530000004JsA',
+            buttonId: '573De0000008OJ8',
+            baseLiveAgentURL: 'https://d.la2-c1cs-ia6.salesforceliveagent.com/chat',
+            eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04IDe000000000uMAA_193973d7677',
+            isOfflineSupportEnabled: false
+          }
+        );
+      };
 
-        </script>
-    </body>
+      window.document.querySelector("#btn-chat-carina").addEventListener('click', function() {
 
+        // ABRIR CHAT NA MESMA ABA, PORÉM COM O WIDGET DE CHAT NO CANTO (RETORNANDO 401)
+        if (!window.embedded_svc) {
+          var s = document.createElement('script');
+          s.setAttribute('src', 'https://carrefourbrasil--hml.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+          s.onload = function() {
+            initESW(null);
+          };
+          document.body.appendChild(s);
+        } else {
+          initESW('https://service.force.com');
+        }
+
+        // ABRIR CHAT EM NOVA ABA (INVALID REQUEST)
+        window.open('https://d.la2-c1cs-ia6.salesforceliveagent.com/chat?deploymentId=572530000004JsA&buttonId=573De0000008OJ8', '_blank');
+
+      })
+      
+    </script>
+  </body>
 </html>
