@@ -41,7 +41,7 @@
             <tr>
               <td>
                 <p style="color:#1E5AC6; font-weight:bold; font-size:20px; margin-bottom:3rem; text-align:justify;">
-                  Olá, Cliente!
+                  Olá, Adnri!
                 </p>
                 <p style="font-size:16px; color:#454545; margin:0; text-align:justify; line-height: 22px;">
                   Lorem ipsum dolor sit amet consectetur adipiscing elit magna
@@ -199,6 +199,16 @@
             isOfflineSupportEnabled: false
           }
         );
+        embedded_svc.liveAgentAPI.startChat({
+                directToAgentRouting: {
+                    buttonId: '573De0000008OJ8',
+                    fallback: true
+                },
+                extraPrechatInfo: [],
+                extraPrechatFormDetails: []
+            });
+
+            console.log('TESTE 6');
       };
 
       window.document.querySelector("#btn-chat-carina").addEventListener('click', function() {
@@ -228,17 +238,6 @@
             }
 
             console.log('TESTE 5');
-
-            embedded_svc.liveAgentAPI.startChat({
-                directToAgentRouting: {
-                    buttonId: '573De0000008OJ8',
-                    fallback: true
-                },
-                extraPrechatInfo: [],
-                extraPrechatFormDetails: []
-            });
-
-            console.log('TESTE 6');
     
             // ABRIR CHAT EM NOVA ABA (INVALID REQUEST)
             //window.open('https://d.la2-c1cs-ia6.salesforceliveagent.com/chat?deploymentId=572530000004JsA&buttonId=573De0000008OJ8', '_blank');
@@ -247,6 +246,7 @@
     </script>
   </body>
 </html>
+
 
 
 
