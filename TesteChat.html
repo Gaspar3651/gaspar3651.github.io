@@ -41,7 +41,7 @@
             <tr>
               <td>
                 <p style="color:#1E5AC6; font-weight:bold; font-size:20px; margin-bottom:3rem; text-align:justify;">
-                  Olá, Adnri!
+                  Olá, Cliente!
                 </p>
                 <p style="font-size:16px; color:#454545; margin:0; text-align:justify; line-height: 22px;">
                   Lorem ipsum dolor sit amet consectetur adipiscing elit magna
@@ -198,8 +198,8 @@
             eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04IDe000000000uMAA_193973d7677',
             isOfflineSupportEnabled: false
           }
-        );
-        embedded_svc.liveAgentAPI.startChat({
+        ).then(result=>{
+            embedded_svc.liveAgentAPI.startChat({
                 directToAgentRouting: {
                     buttonId: '573De0000008OJ8',
                     fallback: true
@@ -209,7 +209,7 @@
             });
 
             console.log('TESTE 6');
-      };
+        });
 
       window.document.querySelector("#btn-chat-carina").addEventListener('click', function() {
         pageLoaded();
@@ -246,6 +246,7 @@
     </script>
   </body>
 </html>
+
 
 
 
