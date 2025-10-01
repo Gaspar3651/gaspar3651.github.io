@@ -41,7 +41,7 @@
             <tr>
               <td>
                 <p style="color:#1E5AC6; font-weight:bold; font-size:20px; margin-bottom:3rem; text-align:justify;">
-                  Olá, BATATA!
+                  Olá, Cliente!
                 </p>
                 <p style="font-size:16px; color:#454545; margin:0; text-align:justify; line-height: 22px;">
                   Lorem ipsum dolor sit amet consectetur adipiscing elit magna
@@ -205,10 +205,14 @@
         pageLoaded();
       })
 
-     function pageLoaded() {
+     window.document.querySelector("#btn-chat-carina").addEventListener('click', function() {
+            pageLoaded();
+        });
+      
+
+        function pageLoaded() {
             console.log('TESTE 0');
           
-            // ABRIR CHAT NA MESMA ABA, PORÉM COM O WIDGET DE CHAT NO CANTO (RETORNANDO 401)
             if (!window.embedded_svc) {
                 console.log('TESTE 2');
                 var s = document.createElement('script');
@@ -222,11 +226,12 @@
                 console.log('TESTE 4');
                 initESW('https://service.force.com');
             }
+
             console.log('TESTE 5');
+
             embedded_svc.liveAgentAPI.startChat({
                 directToAgentRouting: {
                     buttonId: '573De0000008OJ8',
-                    // userId: “”,
                     fallback: true
                 },
                 extraPrechatInfo: [],
@@ -237,12 +242,12 @@
     
             // ABRIR CHAT EM NOVA ABA (INVALID REQUEST)
             //window.open('https://d.la2-c1cs-ia6.salesforceliveagent.com/chat?deploymentId=572530000004JsA&buttonId=573De0000008OJ8', '_blank');
-        }ow.open('https://d.la2-c1cs-ia6.salesforceliveagent.com/chat?deploymentId=572530000004JsA&buttonId=573De0000008OJ8', '_blank');
         }
       
     </script>
   </body>
 </html>
+
 
 
 
