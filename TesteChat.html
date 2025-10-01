@@ -41,7 +41,7 @@
             <tr>
               <td>
                 <p style="color:#1E5AC6; font-weight:bold; font-size:20px; margin-bottom:3rem; text-align:justify;">
-                  Olá, %%PRINOME%%!
+                  Olá, Andrielysson!
                 </p>
                 <p style="font-size:16px; color:#454545; margin:0; text-align:justify; line-height: 22px;">
                   Lorem ipsum dolor sit amet consectetur adipiscing elit magna
@@ -206,7 +206,9 @@
 
      function pageLoaded() {
           console.log('TESTE 0');
+          initESW('https://service.force.com');
           
+          console.log('TESTE 1');
             // ABRIR CHAT NA MESMA ABA, PORÉM COM O WIDGET DE CHAT NO CANTO (RETORNANDO 401)
             //if (!window.embedded_svc) {
               console.log('TESTE 2');
@@ -219,7 +221,7 @@
               document.body.appendChild(s);
             //} else {
               console.log('TESTE 4');
-              //initESW('https://service.force.com');
+              
             //}
     
             // ABRIR CHAT EM NOVA ABA (INVALID REQUEST)
@@ -230,6 +232,7 @@
     </script>
   </body>
 </html>
+
 
 
 
