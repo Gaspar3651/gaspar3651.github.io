@@ -27,7 +27,7 @@
       <tr>
         <td style="background-color:#1E5AC6; text-align:center; padding:2rem;">
           <p style="color:#ffffff; font-weight:bold; font-size:20px; margin-bottom:1rem;">
-            Protocolo de atendimento: 1234
+            Protocolo de atendimento: {!NumeroPedido}
           </p>
           <p style="color:#ffffff; font-size:14px; margin:0;">
             Referente ao Pedido número do pedido realizado em DD/MM/AAAA.
@@ -209,13 +209,16 @@
           
             // ABRIR CHAT NA MESMA ABA, PORÉM COM O WIDGET DE CHAT NO CANTO (RETORNANDO 401)
             if (!window.embedded_svc) {
+              console.log('TESTE 2');
               var s = document.createElement('script');
               s.setAttribute('src', 'https://carrefourbrasil--hml.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
               s.onload = function() {
+                console.log('TESTE 3');
                 initESW(null);
               };
               document.body.appendChild(s);
             } else {
+              console.log('TESTE 4');
               initESW('https://service.force.com');
             }
     
@@ -227,4 +230,5 @@
     </script>
   </body>
 </html>
+
 
