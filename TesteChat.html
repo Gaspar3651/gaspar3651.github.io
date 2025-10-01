@@ -41,7 +41,7 @@
             <tr>
               <td>
                 <p style="color:#1E5AC6; font-weight:bold; font-size:20px; margin-bottom:3rem; text-align:justify;">
-                  Olá, Batata!
+                  Olá, Cliente Teste!
                 </p>
                 <p style="font-size:16px; color:#454545; margin:0; text-align:justify; line-height: 22px;">
                   Lorem ipsum dolor sit amet consectetur adipiscing elit magna
@@ -222,14 +222,21 @@
                 console.log('TESTE 4');
                 initESW('https://service.force.com');
             }
+
+            window.document.querySelector("#helpButtonSpan").addEventListener('click', function() {
+                pageLoaded();
+            });
+
+            console.log('TESTE 5');
     
             // ABRIR CHAT EM NOVA ABA (INVALID REQUEST)
             //window.open('https://d.la2-c1cs-ia6.salesforceliveagent.com/chat?deploymentId=572530000004JsA&buttonId=573De0000008OJ8', '_blank');
-      }
+        }
       
     </script>
   </body>
 </html>
+
 
 
 
