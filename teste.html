@@ -8,9 +8,6 @@
             .embeddedServiceHelpButton .helpButton .uiButton:focus {
                 outline: 1px solid #0A5CA4;
             }
-            body{
-                font-size: 32pt;
-            }
         </style>
 
         <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
@@ -36,7 +33,7 @@
 
                 embedded_svc.settings.enabledFeatures = ['LiveAgent'];
                 embedded_svc.settings.entryFeature = 'LiveAgent';
-
+                embedded_svc.settings.widgetFontSize = '42pt';
                 embedded_svc.init(
                     'https://carrefourservice--varejohml.sandbox.my.salesforce.com',
                     'https://carrefourservice--varejohml.sandbox.my.salesforce-sites.com/',
@@ -80,5 +77,6 @@
         </script>
     </body>
 </html>
+
 
 
