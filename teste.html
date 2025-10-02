@@ -14,7 +14,7 @@
         <script type='text/javascript'>
             var initESW = function(gslbBaseURL) {
                 embedded_svc.settings.displayHelpButton = true; //Or false
-                embedded_svc.settings.language = 'pt-BR'; //For example, enter 'en' or 'en-US'
+                embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
 
                 //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
                 //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
@@ -23,7 +23,6 @@
                 //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
 
                 // Settings for Chat
-                embedded_svc.settings.chatbotAvatarImgURL = "https://carrefourservice.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=068Hs00000nNkZ7&operationContext=DELIVERY&contentId=05THs00002zvlaF&page=0&d=/a/Hs000001VdSd/0vgl2KIIGUKxdPy6X0OvGyG5_nPEkxikG6QR7r2QGBo&oid=00DHs00000NDcMH&dpt=null&viewId=";        
                 //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
                     // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
                     // Returns a valid button ID.
@@ -36,24 +35,22 @@
                 embedded_svc.settings.entryFeature = 'LiveAgent';
 
                 embedded_svc.init(
-                    'https://carrefourservice.my.salesforce.com',
-                    'https://carrefourservice.my.salesforce-sites.com/',
+                    'https://carrefourservice--varejohml.sandbox.my.salesforce.com',
+                    'https://carrefourservice--varejohml.sandbox.my.salesforce-sites.com/',
                     gslbBaseURL,
-                    '00DHs00000NDcMH',
+                    '00DD50000009T77',
                     'Atendimento_Chat_Sams_Club',
                     {
-                        baseLiveAgentContentURL: 'https://c.la3-c1-ia7.salesforceliveagent.com/content',
+                        baseLiveAgentContentURL: 'https://c.la3-c1cs-ia6.salesforceliveagent.com/content',
                         deploymentId: '572Hs000000rZfr',
-                        buttonId: '573Hs000000rjW9',
-                        baseLiveAgentURL: 'https://d.la3-c1-ia7.salesforceliveagent.com/chat',
+                        buttonId: '573D50000008QMv',
+                        baseLiveAgentURL: 'https://d.la3-c1cs-ia6.salesforceliveagent.com/chat',
                         eswLiveAgentDevName: 'Atendimento_Chat_Sams_Club',
                         isOfflineSupportEnabled: false
                     }
-                )
-
+                );
+                
                 setTimeout(function() {
-                    console.log('Hello, world!');
-
                     embedded_svc.liveAgentAPI.startChat({
                         directToAgentRouting: {
                             buttonId: '573Hs000000rjW9',
@@ -62,16 +59,11 @@
                         extraPrechatInfo: [],
                         extraPrechatFormDetails: []
                     });
-                    console.log('TESTE 6');
                 }, 100);
             };
-            
-            function pageLoaded() {
-                console.log('TESTE 0');
-                
-                if (!window.embedded_svc) {
-                    console.log('TESTE 1');
 
+            function pageLoaded() {
+                if (!window.embedded_svc) {
                     var s = document.createElement('script');
                     s.setAttribute('src', 'https://carrefourservice.my.salesforce.com/embeddedservice/5.0/esw.min.js');
                     s.onload = function() {
@@ -80,12 +72,9 @@
                     };
                     document.body.appendChild(s);
                 } else {
-                    console.log('TESTE 2');
-
                     initESW('https://service.force.com')
-                    console.log('TESTE 3');
                 }
-            }
+            }  
         </script>
     </body>
 </html>
