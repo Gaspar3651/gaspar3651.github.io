@@ -1,71 +1,101 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Teste</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
     </head>
-
-    <body>
+    <body onload="pageLoaded()">
         <style type='text/css'>
             .embeddedServiceHelpButton .helpButton .uiButton {
-                background-color: #00a36a;
-                font-family: "Univers", sans-serif;
+                background-color: #0A5CA4;
+                font-family: "Open Sans", sans-serif;
             }
             .embeddedServiceHelpButton .helpButton .uiButton:focus {
-                outline: 1px solid #00a36a;
+                outline: 1px solid #0A5CA4;
             }
         </style>
 
         <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
         <script type='text/javascript'>
+
+            function sendCloseMessage() {
+                window["ReactNativeWebView"] && window["ReactNativeWebView"]?.postMessage(JSON.stringify({"action": "close"}));
+            }
+
             var initESW = function(gslbBaseURL) {
-                embedded_svc.settings.displayHelpButton = true; //Or false
-                embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
-
-                //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
-                //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
-
-                //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
-                //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
-
-                // Settings for Chat
-                //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-                    // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
-                    // Returns a valid button ID.
-                //};
-                //embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
-                //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
-                //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
-
+                embedded_svc.settings.displayHelpButton = false;
+                embedded_svc.settings.language = 'pt-BR';
+                embedded_svc.settings.defaultMinimizedText = 'Chat Sams Club'; 
+                embedded_svc.settings.disabledMinimizedText = 'Chat Indisponível';
+                embedded_svc.settings.loadingText = 'Carregando';
+                embedded_svc.settings.waitingStateBackgroundImgURL = '';
+                embedded_svc.settings.smallCompanyLogoImgURL = '';
+                embedded_svc.settings.targetElement = document.body;
+                embedded_svc.settings.devMode = false;
+                embedded_svc.settings.autoOpenPostChat = true;
+                embedded_svc.settings.chatbotAvatarImgURL = "https://carrefourservice.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=068Hs00000nNkZ7&operationContext=CHATTER&contentId=05THs00000kYOEK&page=0&d=/a/Hs000000zzGy/gp_JpkW3gq0SRdz75L9MrcJoF4aOUxrLLd6G6K0UGvk&oid=00DHs00000NDcMH&dpt=null&viewId=";
                 embedded_svc.settings.enabledFeatures = ['LiveAgent'];
                 embedded_svc.settings.entryFeature = 'LiveAgent';
 
+                embedded_svc.addEventHandler("onChatEndedByChasitor", function(data) {
+                    embedded_svc.liveAgentAPI.clearSession();
+                    setTimeout(() => sendCloseMessage(), 300);
+                });
+
+                embedded_svc.addEventHandler("afterDestroy", function(data) {
+                    setTimeout(() => sendCloseMessage(), 300);
+                });
+
+                embedded_svc.addEventHandler("onEmbeddedMessagingWindowClosed", function(data) {
+                    setTimeout(() => sendCloseMessage(), 300);
+                }); 
+
+
                 embedded_svc.init(
-                    'https://carrefourservice.my.salesforce.com',
-                    'https://carrefourservice.my.salesforce-sites.com/',
+                    'https://carrefourservice--varejohml.sandbox.my.salesforce.com',
+                    'https://carrefourservice--varejohml.sandbox.my.salesforce-sites.com/',
                     gslbBaseURL,
-                    '00DHs00000NDcMH',
-                    'Atendimento_Chat_Varejo_Atacad_o',
+                    '00DD50000009T77',
+                    'Atendimento_Chat_Sams_Club',
                     {
-                        baseLiveAgentContentURL: 'https://c.la3-c1-ia7.salesforceliveagent.com/content',
+                        baseLiveAgentContentURL: 'https://c.la3-c1cs-ia6.salesforceliveagent.com/content',
                         deploymentId: '572Hs000000rZfr',
-                        buttonId: '573Hs000000rZRc',
-                        baseLiveAgentURL: 'https://d.la3-c1-ia7.salesforceliveagent.com/chat',
-                        eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04IHs000000omZdMAI_195f1d436ee',
+                        buttonId: '573D50000008QMv',
+                        baseLiveAgentURL: 'https://d.la3-c1cs-ia6.salesforceliveagent.com/chat',
+                        eswLiveAgentDevName: 'Atendimento_Chat_Sams_Club',
                         isOfflineSupportEnabled: false
                     }
                 );
+
+                setTimeout(function() {
+                    if (embedded_svc.liveAgentAPI) {
+                        embedded_svc.liveAgentAPI.startChat({
+                            directToAgentRouting: {
+                                buttonId: '573D50000008QMv',
+                                fallback: true
+                            },
+                            extraPrechatInfo: [],
+                            extraPrechatFormDetails: []
+                        });
+                    }
+                }, 1500);
             };
 
-            if (!window.embedded_svc) {
-                var s = document.createElement('script');
-                s.setAttribute('src', 'https://carrefourservice.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-                s.onload = function() {
-                    initESW(null);
-                };
-                document.body.appendChild(s);
-            } else {
-                initESW('https://service.force.com');
-            }
+            function pageLoaded() {
+                if (!window.embedded_svc) {
+                    var s = document.createElement('script');
+                    s.setAttribute('src', 'https://carrefourservice--varejohml.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+                    s.onload = function() {
+                        initESW(null);
+                    };
+                    document.body.appendChild(s);
+                } else {
+                    initESW('https://service.force.com');
+                }
+            }            
         </script>
-    </body> 
+    </body>
 </html>
