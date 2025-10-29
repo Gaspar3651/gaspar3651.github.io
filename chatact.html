@@ -7,7 +7,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
     </head>
-    <body onload="pageLoaded()">
+    <body>
         <style type='text/css'>
             .embeddedServiceHelpButton .helpButton .uiButton {
                 background-color: #0A5CA4;
@@ -84,18 +84,16 @@
                 }, 1500);
             };
 
-            function pageLoaded() {
-                if (!window.embedded_svc) {
-                    var s = document.createElement('script');
-                    s.setAttribute('src', 'https://carrefourservice--varejohml.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-                    s.onload = function() {
-                        initESW(null);
-                    };
-                    document.body.appendChild(s);
-                } else {
-                    initESW('https://service.force.com');
-                }
-            }            
+            if (!window.embedded_svc) {
+                var s = document.createElement('script');
+                s.setAttribute('src', 'https://carrefourservice--varejohml.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+                s.onload = function() {
+                    initESW(null);
+                };
+                document.body.appendChild(s);
+            } else {
+                initESW('https://service.force.com');
+            }
         </script>
     </body>
 </html>
