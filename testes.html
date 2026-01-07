@@ -3,26 +3,154 @@
     <head>
         <title>Testes</title>
     </head>
-    <body>
-        <script type="text/javascript">
-        	function initEmbeddedMessaging() {
-        		try {
-        			embeddedservice_bootstrap.settings.language = 'pt_BR'; // For example, enter 'en' or 'en-US'
-        
-        			embeddedservice_bootstrap.init(
-        				'00DD50000009T77',
-        				'Chat_Atacadao_Enhanced',
-        				'https://carrefourservice--varejohml.sandbox.my.site.com/ESWChatAtacadaoEnhanced1760357614442',
-        				{
-        					scrt2URL: 'https://carrefourservice--varejohml.sandbox.my.salesforce-scrt.com'
-        				}
-        			);
-        		} catch (err) {
-        			console.error('Error loading Embedded Messaging: ', err);
-        		}
-        	};
-        </script>
-        <script type='text/javascript' src='https://carrefourservice--varejohml.sandbox.my.site.com/ESWChatAtacadaoEnhanced1760357614442/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+	<style>
+		.embeddedServiceHelpButton .helpButton .uiButton {
+			background-color: #00a36a !important;
+			font-family: 'Univers', sans-serif !important;
+		}
 
-    </body>
+		.embeddedServiceHelpButton .helpButton .uiButton:focus {
+			outline: 1px solid #00a36a !important;
+		}
+
+		.salesforce-chat-button {
+			border: 0;
+			cursor: pointer;
+			position: fixed;
+			z-index: 10;
+			bottom: 40px;
+			right: 40px;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background-color: #ff6633;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.salesforce-chat-icon {
+			width: 30px;
+			height: 30px;
+			font-weight: bold;
+		}
+	</style>
+
+	<script type="text/javascript">
+		var initESW = function (gslbBaseURL) {
+			console.log('initESW chamado');
+			embeddedservice_bootstrap.settings.displayHelpButton = false;
+			embeddedservice_bootstrap.settings.language = 'pt-BR';
+
+			embeddedservice_bootstrap.settings.enabledFeatures = ['LiveAgent'];
+			embeddedservice_bootstrap.settings.entryFeature = 'LiveAgent';
+
+			var dominioAtual = window.location.hostname;
+			var isProduction =
+			dominioAtual === 'www.atacadao.com.br' ||
+			dominioAtual === 'secure.atacadao.com.br';
+
+			console.log('Dominio atual:', dominioAtual);
+			console.log('Ambiente de produção?', isProduction);
+
+			var chatbotAvatarImgURL = isProduction
+			? 'https://carrefourservice.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=068Hs00000kaI0p&operationContext=DELIVERY&contentId=05THs00002pbzlX&page=0&d=/a/Hs000001VaLE/mtEoiyhLzcCVDwCM__VZeRLDqg3OMYm5xzP9RY3czJY&oid=00DHs00000NDcMH&dpt=null&viewId='
+			: 'https://carrefourservice.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=068Hs00000kaI0p&operationContext=DELIVERY&contentId=05THs00002pbzlX&page=0&d=/a/Hs000001VaLE/mtEoiyhLzcCVDwCM__VZeRLDqg3OMYm5xzP9RY3czJY&oid=00DHs00000NDcMH&dpt=null&viewId=';
+
+			var scrt2URL = isProduction
+			? 'https://carrefourservice.my.salesforce.com'
+			: 'https://carrefourservice--varejohml.sandbox.my.salesforce-scrt.com';
+
+			var urlInitSites = isProduction
+			? 'https://carrefourservice.my.salesforce-sites.com/'
+			: 'https://carrefourservice--varejohml.sandbox.my.salesforce-sites.com/ESWChatAtacadaoEnhanced1760357614442';
+
+			var codeGslbBaseURL = isProduction
+			? '00DHs00000NDcMH'
+			: '00DD50000009T77';
+
+
+
+
+			embeddedservice_bootstrap.settings.chatbotAvatarImgURL = chatbotAvatarImgURL;
+			embeddedservice_bootstrap.settings.smallCompanyLogoImgURL = chatbotAvatarImgURL;
+
+			embeddedservice_bootstrap.init(
+				codeGslbBaseURL,
+				'Chat_Atacadao_Enhanced',
+				urlInitSites,
+				{
+					scrt2URL: scrt2URL
+				}
+			);
+
+			console.log('embeddedservice_bootstrap.init finalizado');
+		};
+/*
+		(function () {
+			var dominioAtual = window.location.hostname;
+			var isProduction =
+			dominioAtual === 'www.atacadao.com.br' ||
+			dominioAtual === 'secure.atacadao.com.br';
+
+			var urlEmbeddedservice = isProduction
+			? 'https://carrefourservice.my.salesforce.com/embeddedservice/5.0/esw.min.js'
+			: 'https://carrefourservice--varejohml.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js';
+
+			console.log('URL do script esw.min.js:', urlEmbeddedservice);
+
+			if (!window.embedded_svc) {
+			console.log('embedded_svc não encontrado. Carregando script...');
+			var s = document.createElement('script');
+			s.setAttribute('src', urlEmbeddedservice);
+			s.onload = function () {
+				console.log('Script esw.min.js carregado');
+				initESW(null);
+			};
+			s.onerror = function () {
+				console.error('Erro ao carregar esw.min.js');
+			};
+			document.body.appendChild(s);
+			} else {
+			console.log('embedded_svc já está disponível. Inicializando...');
+			initESW('https://service.force.com');
+			}
+		})();
+*/
+		function handleOpenChat() {
+			console.log('handleOpenChat acionado');
+			if (window.embedded_svc) {
+			console.log('Chamando bootstrapEmbeddedService');
+			window.embeddedservice_bootstrap.bootstrapEmbeddedService();
+			} else {
+			console.warn('embedded_svc não está disponível no handleOpenChat');
+			}
+		}
+
+		function createSalesForceChatButton() {
+			if (!window.salesforceChatButtonInitialized) {
+			console.log('Criando botão de chat Salesforce');
+			var button = document.createElement('button');
+			button.className = 'salesforce-chat-button';
+			button.onclick = function () {
+				console.log('Botão de chat clicado');
+				handleOpenChat();
+			};
+
+			var icon = document.createElement('img');
+			icon.src =
+				'https://atacadaobr.vtexassets.com/assets/vtex.file-manager-graphql/images/1dcd33fd-f2f3-4c52-97f1-7c71287a0e95___d477fad1a4205afa7a331082414168ac.svg';
+			icon.className = 'salesforce-chat-icon';
+
+			button.appendChild(icon);
+			document.body.appendChild(button);
+
+			window.salesforceChatButtonInitialized = true;
+			} else {
+			console.log('Botão de chat Salesforce já estava criado');
+			}
+		}
+
+		createSalesForceChatButton();
+	</script>
 </html>
