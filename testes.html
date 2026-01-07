@@ -3,89 +3,57 @@
     <head>
         <title>Testes</title>
     </head>
-	<style>
-		.embeddedServiceHelpButton .helpButton .uiButton {
-			background-color: #00a36a !important;
-			font-family: 'Univers', sans-serif !important;
-		}
 
-		.embeddedServiceHelpButton .helpButton .uiButton:focus {
-			outline: 1px solid #00a36a !important;
-		}
+	<body>
+		<script type="text/javascript">
 
-		.salesforce-chat-button {
-			border: 0;
-			cursor: pointer;
-			position: fixed;
-			z-index: 10;
-			bottom: 40px;
-			right: 40px;
-			width: 50px;
-			height: 50px;
-			border-radius: 50%;
-			background-color: #ff6633;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
+			function initEmbeddedMessaging() {
+				console.log('initESW chamado');
+				embeddedservice_bootstrap.settings.displayHelpButton = false;
+				embeddedservice_bootstrap.settings.language = 'pt-BR';
 
-		.salesforce-chat-icon {
-			width: 30px;
-			height: 30px;
-			font-weight: bold;
-		}
-	</style>
-	
-	<script type="text/javascript">
+				embeddedservice_bootstrap.settings.enabledFeatures = ['LiveAgent'];
+				embeddedservice_bootstrap.settings.entryFeature = 'LiveAgent';
 
-		function initEmbeddedMessaging() {
-			console.log('initESW chamado');
-			embeddedservice_bootstrap.settings.displayHelpButton = false;
-			embeddedservice_bootstrap.settings.language = 'pt-BR';
+				var dominioAtual = window.location.hostname;
+				var isProduction =
+				dominioAtual === 'www.atacadao.com.br' ||
+				dominioAtual === 'secure.atacadao.com.br';
 
-			embeddedservice_bootstrap.settings.enabledFeatures = ['LiveAgent'];
-			embeddedservice_bootstrap.settings.entryFeature = 'LiveAgent';
+				console.log('Dominio atual:', dominioAtual);
+				console.log('Ambiente de produção?', isProduction);
 
-			var dominioAtual = window.location.hostname;
-			var isProduction =
-			dominioAtual === 'www.atacadao.com.br' ||
-			dominioAtual === 'secure.atacadao.com.br';
+				var chatbotAvatarImgURL = isProduction
+				? 'https://carrefourservice.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=068Hs00000kaI0p&operationContext=DELIVERY&contentId=05THs00002pbzlX&page=0&d=/a/Hs000001VaLE/mtEoiyhLzcCVDwCM__VZeRLDqg3OMYm5xzP9RY3czJY&oid=00DHs00000NDcMH&dpt=null&viewId='
+				: 'https://carrefourservice.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=068Hs00000kaI0p&operationContext=DELIVERY&contentId=05THs00002pbzlX&page=0&d=/a/Hs000001VaLE/mtEoiyhLzcCVDwCM__VZeRLDqg3OMYm5xzP9RY3czJY&oid=00DHs00000NDcMH&dpt=null&viewId=';
 
-			console.log('Dominio atual:', dominioAtual);
-			console.log('Ambiente de produção?', isProduction);
+				var scrt2URL = isProduction
+				? 'https://carrefourservice.my.salesforce.com'
+				: 'https://carrefourservice--varejohml.sandbox.my.salesforce-scrt.com';
 
-			var chatbotAvatarImgURL = isProduction
-			? 'https://carrefourservice.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=068Hs00000kaI0p&operationContext=DELIVERY&contentId=05THs00002pbzlX&page=0&d=/a/Hs000001VaLE/mtEoiyhLzcCVDwCM__VZeRLDqg3OMYm5xzP9RY3czJY&oid=00DHs00000NDcMH&dpt=null&viewId='
-			: 'https://carrefourservice.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=068Hs00000kaI0p&operationContext=DELIVERY&contentId=05THs00002pbzlX&page=0&d=/a/Hs000001VaLE/mtEoiyhLzcCVDwCM__VZeRLDqg3OMYm5xzP9RY3czJY&oid=00DHs00000NDcMH&dpt=null&viewId=';
+				var urlInitSites = isProduction
+				? 'https://carrefourservice.my.salesforce-sites.com/'
+				: 'https://carrefourservice--varejohml.sandbox.my.site.com/ESWChatAtacadaoEnhanced1760357614442';
 
-			var scrt2URL = isProduction
-			? 'https://carrefourservice.my.salesforce.com'
-			: 'https://carrefourservice--varejohml.sandbox.my.salesforce-scrt.com';
+				var codeGslbBaseURL = isProduction
+				? '00DHs00000NDcMH'
+				: '00DD50000009T77';
 
-			var urlInitSites = isProduction
-			? 'https://carrefourservice.my.salesforce-sites.com/'
-			: 'https://carrefourservice--varejohml.sandbox.my.salesforce-site.com/ESWChatAtacadaoEnhanced1760357614442';
+				embeddedservice_bootstrap.settings.chatbotAvatarImgURL = chatbotAvatarImgURL;
+				embeddedservice_bootstrap.settings.smallCompanyLogoImgURL = chatbotAvatarImgURL;
 
-			var codeGslbBaseURL = isProduction
-			? '00DHs00000NDcMH'
-			: '00DD50000009T77';
+				embeddedservice_bootstrap.init(
+					codeGslbBaseURL,
+					'Chat_Atacadao_Enhanced',
+					urlInitSites,
+					{
+						scrt2URL: scrt2URL
+					}
+				);
 
-			embeddedservice_bootstrap.settings.chatbotAvatarImgURL = chatbotAvatarImgURL;
-			embeddedservice_bootstrap.settings.smallCompanyLogoImgURL = chatbotAvatarImgURL;
-
-			embeddedservice_bootstrap.init(
-				codeGslbBaseURL,
-				'Chat_Atacadao_Enhanced',
-				urlInitSites,
-				{
-					scrt2URL: scrt2URL
-				}
-			);
-
-			console.log('embeddedservice_bootstrap.init finalizado');
-		};
-	</script>
-	<script type='text/javascript' src='https://carrefourservice--varejohml.sandbox.my.site.com/ESWChatAtacadaoEnhanced1760357614442/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-
-
+				console.log('embeddedservice_bootstrap.init finalizado');
+			};
+		</script>
+		<script type='text/javascript' src='https://carrefourservice--varejohml.sandbox.my.site.com/ESWChatAtacadaoEnhanced1760357614442/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+	</body>
 </html>
