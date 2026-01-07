@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Testes</title>
-    </head>
-
 	<body>
 		<script type="text/javascript">
 			function initEmbeddedMessaging() {
@@ -56,7 +52,7 @@
 				console.log('embeddedservice_bootstrap.init finalizado');
 			};
 
-			function handleOpenChat () {
+			(function () {
 				var dominioAtual = window.location.hostname;
 				var isProduction =
 				dominioAtual === 'www.atacadao.com.br' ||
@@ -69,7 +65,7 @@
 				console.log('URL do script esw.min.js:', urlEmbeddedservice);
 
 				if (!window.embeddedservice_bootstrap) {
-					console.log('embedded_svc não encontrado. Carregando script...');
+					console.log('embeddedservice_bootstrap não encontrado. Carregando script...');
 					var s = document.createElement('script');
 					s.setAttribute('src', urlEmbeddedservice);
 					s.onload = function () {
@@ -83,8 +79,18 @@
 
 					document.body.appendChild(s);
 				} else {
-					console.log('embedded_svc já está disponível. Inicializando...');
+					console.log('embeddedservice_bootstrap já está disponível. Inicializando...');
 					initEmbeddedMessaging();
+				}
+			})();
+
+			function handleOpenChat () {
+				console.log('handleOpenChat acionado');
+				if (window.embeddedservice_bootstrap) {
+					console.log('Chamando bootstrapEmbeddedService');
+					window.embeddedservice_bootstrap.bootstrapEmbeddedService();
+				} else {
+					console.warn('embeddedservice_bootstrap não está disponível no handleOpenChat');
 				}
 			};
 
@@ -114,7 +120,5 @@
 
 			createSalesForceChatButton();
 		</script>
-
-
 	</body>
 </html>
