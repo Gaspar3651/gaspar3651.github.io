@@ -6,14 +6,40 @@
 
 	<body>
 		<script type="text/javascript">
+			(function () {
+				var dominioAtual = window.location.hostname;
+				var isProduction =
+				dominioAtual === 'www.atacadao.com.br' ||
+				dominioAtual === 'secure.atacadao.com.br';
+
+				var urlEmbeddedservice = isProduction
+				? 'https://carrefourservice.my.salesforce.com/embeddedservice/5.0/esw.min.js'
+				: 'https://carrefourservice--varejohml.sandbox.my.site.com/ESWChatAtacadaoEnhanced1760357614442/assets/js/bootstrap.min.js';
+
+				console.log('URL do script esw.min.js:', urlEmbeddedservice);
+
+				if (!window.embeddedservice_bootstrap) {
+					console.log('embedded_svc não encontrado. Carregando script...');
+					var s = document.createElement('script');
+					s.setAttribute('src', urlEmbeddedservice);
+					s.onload = function () {
+						console.log('Script esw.min.js carregado');
+						initEmbeddedMessaging();
+					};
+
+					s.onerror = function () {
+						console.error('Erro ao carregar esw.min.js');
+					};
+
+					document.body.appendChild(s);
+				} else {
+					console.log('embedded_svc já está disponível. Inicializando...');
+					initEmbeddedMessaging();
+				}
+			})();
 
 			function initEmbeddedMessaging() {
-				console.log('initESW chamado');
-				embeddedservice_bootstrap.settings.displayHelpButton = false;
-				embeddedservice_bootstrap.settings.language = 'pt-BR';
-
-				embeddedservice_bootstrap.settings.enabledFeatures = ['LiveAgent'];
-				embeddedservice_bootstrap.settings.entryFeature = 'LiveAgent';
+				console.log('initEmbeddedMessaging chamado');
 
 				var dominioAtual = window.location.hostname;
 				var isProduction =
@@ -27,6 +53,7 @@
 				? 'https://carrefourservice.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=068Hs00000kaI0p&operationContext=DELIVERY&contentId=05THs00002pbzlX&page=0&d=/a/Hs000001VaLE/mtEoiyhLzcCVDwCM__VZeRLDqg3OMYm5xzP9RY3czJY&oid=00DHs00000NDcMH&dpt=null&viewId='
 				: 'https://carrefourservice.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=068Hs00000kaI0p&operationContext=DELIVERY&contentId=05THs00002pbzlX&page=0&d=/a/Hs000001VaLE/mtEoiyhLzcCVDwCM__VZeRLDqg3OMYm5xzP9RY3czJY&oid=00DHs00000NDcMH&dpt=null&viewId=';
 
+				
 				var scrt2URL = isProduction
 				? 'https://carrefourservice.my.salesforce.com'
 				: 'https://carrefourservice--varejohml.sandbox.my.salesforce-scrt.com';
@@ -38,6 +65,13 @@
 				var codeGslbBaseURL = isProduction
 				? '00DHs00000NDcMH'
 				: '00DD50000009T77';
+				
+
+				embeddedservice_bootstrap.settings.displayHelpButton = false;
+				embeddedservice_bootstrap.settings.language = 'pt-BR';
+
+				embeddedservice_bootstrap.settings.enabledFeatures = ['LiveAgent'];
+				embeddedservice_bootstrap.settings.entryFeature = 'LiveAgent';
 
 				embeddedservice_bootstrap.settings.chatbotAvatarImgURL = chatbotAvatarImgURL;
 				embeddedservice_bootstrap.settings.smallCompanyLogoImgURL = chatbotAvatarImgURL;
@@ -54,6 +88,6 @@
 				console.log('embeddedservice_bootstrap.init finalizado');
 			};
 		</script>
-		<script type='text/javascript' src='https://carrefourservice--varejohml.sandbox.my.site.com/ESWChatAtacadaoEnhanced1760357614442/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
 	</body>
 </html>
