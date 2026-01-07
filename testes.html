@@ -6,38 +6,6 @@
 
 	<body>
 		<script type="text/javascript">
-			(function () {
-				var dominioAtual = window.location.hostname;
-				var isProduction =
-				dominioAtual === 'www.atacadao.com.br' ||
-				dominioAtual === 'secure.atacadao.com.br';
-
-				var urlEmbeddedservice = isProduction
-				? 'https://carrefourservice.my.salesforce.com/embeddedservice/5.0/esw.min.js'
-				: 'https://carrefourservice--varejohml.sandbox.my.site.com/ESWChatAtacadaoEnhanced1760357614442/assets/js/bootstrap.min.js';
-
-				console.log('URL do script esw.min.js:', urlEmbeddedservice);
-
-				if (!window.embeddedservice_bootstrap) {
-					console.log('embedded_svc não encontrado. Carregando script...');
-					var s = document.createElement('script');
-					s.setAttribute('src', urlEmbeddedservice);
-					s.onload = function () {
-						console.log('Script esw.min.js carregado');
-						initEmbeddedMessaging();
-					};
-
-					s.onerror = function () {
-						console.error('Erro ao carregar esw.min.js');
-					};
-
-					document.body.appendChild(s);
-				} else {
-					console.log('embedded_svc já está disponível. Inicializando...');
-					initEmbeddedMessaging();
-				}
-			})();
-
 			function initEmbeddedMessaging() {
 				console.log('initEmbeddedMessaging chamado');
 
@@ -87,7 +55,66 @@
 
 				console.log('embeddedservice_bootstrap.init finalizado');
 			};
+
+			function handleOpenChat () {
+				var dominioAtual = window.location.hostname;
+				var isProduction =
+				dominioAtual === 'www.atacadao.com.br' ||
+				dominioAtual === 'secure.atacadao.com.br';
+
+				var urlEmbeddedservice = isProduction
+				? 'https://carrefourservice.my.salesforce.com/embeddedservice/5.0/esw.min.js'
+				: 'https://carrefourservice--varejohml.sandbox.my.site.com/ESWChatAtacadaoEnhanced1760357614442/assets/js/bootstrap.min.js';
+
+				console.log('URL do script esw.min.js:', urlEmbeddedservice);
+
+				if (!window.embeddedservice_bootstrap) {
+					console.log('embedded_svc não encontrado. Carregando script...');
+					var s = document.createElement('script');
+					s.setAttribute('src', urlEmbeddedservice);
+					s.onload = function () {
+						console.log('Script esw.min.js carregado');
+						initEmbeddedMessaging();
+					};
+
+					s.onerror = function () {
+						console.error('Erro ao carregar esw.min.js');
+					};
+
+					document.body.appendChild(s);
+				} else {
+					console.log('embedded_svc já está disponível. Inicializando...');
+					initEmbeddedMessaging();
+				}
+			};
+
+			function createSalesForceChatButton() {
+				if (!window.salesforceChatButtonInitialized) {
+					console.log('Criando botão de chat Salesforce');
+					var button = document.createElement('button');
+					button.className = 'salesforce-chat-button';
+					button.onclick = function () {
+						console.log('Botão de chat clicado');
+						handleOpenChat();
+					};
+
+					var icon = document.createElement('img');
+					icon.src =
+						'https://atacadaobr.vtexassets.com/assets/vtex.file-manager-graphql/images/1dcd33fd-f2f3-4c52-97f1-7c71287a0e95___d477fad1a4205afa7a331082414168ac.svg';
+					icon.className = 'salesforce-chat-icon';
+
+					button.appendChild(icon);
+					document.body.appendChild(button);
+
+					window.salesforceChatButtonInitialized = true;
+				} else {
+					le.log('Botão de chat Salesforce já estava criado');
+				}
+			}
+
+			createSalesForceChatButton();
 		</script>
+
 
 	</body>
 </html>
