@@ -3,55 +3,29 @@
 <html lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 		<style type="text/css">
 			.embeddedServiceHelpButton .helpButton .uiButton {
 				background-color: #1e5bc6;
 				font-family: "Univers", sans-serif;
 			}
+			
 			.embeddedServiceHelpButton .helpButton .uiButton:focus {
 				outline: 1px solid #1e5bc6;
 			}
+
+			body {
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				z-index: -1;
+			}
 		</style>
-		<title>Chatbot Samy</title>
+		<title>Chatbot Carina</title>
 	</head>
 	<body>
-		<!-- <p onclick="handleOpenChat()" style="cursor: pointer;">Clique aqui para iniciar o Chat</p> -->
-
-		<span class="loader"></span>
-		<style>
-			.loader {
-				width: 48px;
-				height: 48px;
-				border: 5px solid #fff;
-				border-bottom-color: #0067ad;
-				border-radius: 50%;
-				display: inline-block;
-				box-sizing: border-box;
-				animation: rotation 1s linear infinite;
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-			}
-
-			@keyframes rotation {
-				0% {
-				transform: rotate(0deg);
-				}
-				100% {
-				transform: rotate(360deg);
-				}
-			}
-		</style>
-		<script>
-			setTimeout(function () {
-				document.querySelector(".loader").style.display = "none";
-			}, 5000);
-		</script>
 		<script type="text/javascript" src="./index-carina-prod_files/esw.min.js.baixados"></script>
-
 		<script type="text/javascript">
 			function isProduction() {
 				if (typeof window !== "undefined") {
@@ -93,24 +67,24 @@
 				console.log('Ambiente de produção?', isProduction());
 
 				var chatbotAvatarImgURL = isProduction()
-				? "https://carrefourservice.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=068Hs00000nNkZ7&operationContext=DELIVERY&contentId=05THs00002zvlaF&page=0&d=/a/Hs000001VdSd/0vgl2KIIGUKxdPy6X0OvGyG5_nPEkxikG6QR7r2QGBo&oid=00DHs00000NDcMH&dpt=null&viewId="
-				: "https://carrefourservice--varejohml.sandbox.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=068D50000032MrU&operationContext=DELIVERY&contentId=05TD5000007k3n7&page=0&d=/a/D500000015aR/FliLu17zp9UQohcPBQnq84RS5HOO.q46LBcoOGP3OZ0&oid=00DD50000009T77&dpt=null&viewId=";
- 	
+				? "https://carrefourservice.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=068Hs00000fx94B&operationContext=DELIVERY&contentId=05THs00002lPmjr&page=0&d=/a/Hs000001VZbu/C5n4w2SKs.ovyGe0nNp69.J_zmAKt9KaevMNpaDhF30&oid=00DHs00000NDcMH&dpt=null&viewId="
+          		: "https://carrefourservice.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=068Hs00000fx94B&operationContext=DELIVERY&contentId=05THs00002lPmjr&page=0&d=/a/Hs000001VZbu/C5n4w2SKs.ovyGe0nNp69.J_zmAKt9KaevMNpaDhF30&oid=00DHs00000NDcMH&dpt=null&viewId=";
+				
 				var scrt2URL = isProduction()
 				? 'https://carrefourservice.my.salesforce-scrt.com'
 				: 'https://carrefourservice--varejohml.sandbox.my.salesforce-scrt.com';
 
 				var urlInitSites = isProduction()
-				? 'https://carrefourservice.my.site.com/ESWChatSamsEnhanced1768353344484'
-				: 'https://carrefourservice--varejohml.sandbox.my.site.com/ESWChatSamsClubEnhanced1767014819141';
+				? 'https://carrefourservice.my.site.com/ESWChatCarrefourEnhance1768352483371'
+				: 'https://carrefourservice--varejohml.sandbox.my.site.com/ESWChatCarrefourEnhance1750101728853';
 
 				var codeGslbBaseURL = isProduction()
 				? '00DHs00000NDcMH'
 				: '00DD50000009T77';
 
 				var botName = isProduction()
-				? 'Chat_Sams_Enhanced'
-				: 'ChatSamsClubEnhanced';
+				? 'Chat_Carrefour_Enhanced'
+				: 'Chat_Carrefour_Enhanced';
 
 				setPreChat();
 
@@ -136,13 +110,13 @@
 				console.log('embeddedservice_bootstrap.init finalizado');
 				setTimeout(function () {
 					handleOpenChat();
-				}, 1000);
+				}, 3000);
 			};
 
 			(function () {
 				var urlEmbeddedservice = isProduction()
-				? 'https://carrefourservice.my.site.com/ESWChatSamsEnhanced1768353344484/assets/js/bootstrap.min.js'
-				: 'https://carrefourservice--varejohml.sandbox.my.site.com/ESWChatSamsClubEnhanced1767014819141/assets/js/bootstrap.min.js';
+				? 'https://carrefourservice.my.site.com/ESWChatCarrefourEnhance1768352483371/assets/js/bootstrap.min.js'
+				: 'https://carrefourservice--varejohml.sandbox.my.site.com/ESWChatCarrefourEnhance1750101728853/assets/js/bootstrap.min.js';
 
 				console.log('URL do script esw.min.js:', urlEmbeddedservice);
 
