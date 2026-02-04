@@ -1,37 +1,118 @@
 <!DOCTYPE html>
-<html>
+<!-- saved from url=(0087)https://storage.googleapis.com/br-digitalcomm-prd-product-images/chat-widget/index.html -->
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style type="text/css">
+			.embeddedServiceHelpButton .helpButton .uiButton {
+				background-color: #1e5bc6;
+				font-family: "Univers", sans-serif;
+			}
+			.embeddedServiceHelpButton .helpButton .uiButton:focus {
+				outline: 1px solid #1e5bc6;
+			}
+		</style>
+		<title>Chatbot Samy</title>
+	</head>
 	<body>
+		<!-- <p onclick="handleOpenChat()" style="cursor: pointer;">Clique aqui para iniciar o Chat</p> -->
+
+		<span class="loader"></span>
+		<style>
+			.loader {
+				width: 48px;
+				height: 48px;
+				border: 5px solid #fff;
+				border-bottom-color: #0067ad;
+				border-radius: 50%;
+				display: inline-block;
+				box-sizing: border-box;
+				animation: rotation 1s linear infinite;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			@keyframes rotation {
+				0% {
+				transform: rotate(0deg);
+				}
+				100% {
+				transform: rotate(360deg);
+				}
+			}
+		</style>
+		<script>
+			setTimeout(function () {
+				document.querySelector(".loader").style.display = "none";
+			}, 5000);
+		</script>
+		<script type="text/javascript" src="./index-carina-prod_files/esw.min.js.baixados"></script>
+
 		<script type="text/javascript">
+			function isProduction() {
+				if (typeof window !== "undefined") {
+					var hostname = window.location.hostname;
+					console.log('hostname: ' + hostname);
+					return !(hostname.includes("localhost") || hostname.includes("ngrok") || hostname.includes("-qa"));
+				}
+			}
+
+			function setPreChat(){
+				let urlParams = new URLSearchParams(window.location.search);
+				let origem = urlParams.get("origem");
+				let menu = urlParams.get("menu");
+
+				if (origem === "App" || origem === "APP") {
+					window.addEventListener( "onEmbeddedMessagingReady" , ( ) => { 
+						console.log ( "Received the APP event…"); 
+						embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields( { 
+							"Origem" : "App - Meu Carrefour"
+						}); 
+					});
+
+				} else if ((origem === "DMA" || origem === "SiteAreaLogada" || origem === "Site") && menu) {
+					window.addEventListener( "onEmbeddedMessagingReady" , ( ) => { 
+						console.log ( "Received the DMA, SiteAreaLogada, Site event…"); 
+						embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields( { 
+							"Origem" : origem,
+							"RedirectDMAVarejo" : menu
+						}); 
+					});
+
+				} else {
+					alert("Erro ao carregar o chat");
+				}
+			}
+
 			function initEmbeddedMessaging() {
 				console.log('initEmbeddedMessaging chamado');
+				console.log('Ambiente de produção?', isProduction());
 
-				var dominioAtual = window.location.hostname;
-				var isProduction =
-				!(dominioAtual === 'www.atacadao.com.br' ||
-				dominioAtual === 'secure.atacadao.com.br');
-
-				console.log('Dominio atual:', dominioAtual);
-				console.log('Ambiente de produção?', isProduction);
-
-				var chatbotAvatarImgURL = isProduction
-				? 'https://carrefourservice.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=068Hs00000kaI0p&operationContext=DELIVERY&contentId=05THs00002pbzlX&page=0&d=/a/Hs000001VaLE/mtEoiyhLzcCVDwCM__VZeRLDqg3OMYm5xzP9RY3czJY&oid=00DHs00000NDcMH&dpt=null&viewId='
-				: 'https://carrefourservice.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=068Hs00000kaI0p&operationContext=DELIVERY&contentId=05THs00002pbzlX&page=0&d=/a/Hs000001VaLE/mtEoiyhLzcCVDwCM__VZeRLDqg3OMYm5xzP9RY3czJY&oid=00DHs00000NDcMH&dpt=null&viewId=';
-				
-				var scrt2URL = isProduction
+				var chatbotAvatarImgURL = isProduction()
+				? "https://carrefourservice.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=068Hs00000nNkZ7&operationContext=DELIVERY&contentId=05THs00002zvlaF&page=0&d=/a/Hs000001VdSd/0vgl2KIIGUKxdPy6X0OvGyG5_nPEkxikG6QR7r2QGBo&oid=00DHs00000NDcMH&dpt=null&viewId="
+				: "https://carrefourservice--varejohml.sandbox.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=068D50000032MrU&operationContext=DELIVERY&contentId=05TD5000007k3n7&page=0&d=/a/D500000015aR/FliLu17zp9UQohcPBQnq84RS5HOO.q46LBcoOGP3OZ0&oid=00DD50000009T77&dpt=null&viewId=";
+ 	
+				var scrt2URL = isProduction()
 				? 'https://carrefourservice.my.salesforce-scrt.com'
 				: 'https://carrefourservice--varejohml.sandbox.my.salesforce-scrt.com';
 
-				var urlInitSites = isProduction
-				? 'https://carrefourservice.my.site.com/ESWChatAtacadaoEnhanced1768352701292'
-				: 'https://carrefourservice--varejohml.sandbox.my.site.com/ESWChatAtacadaoEnhanced1760357614442';
+				var urlInitSites = isProduction()
+				? 'https://carrefourservice.my.site.com/ESWChatSamsEnhanced1768353344484'
+				: 'https://carrefourservice--varejohml.sandbox.my.site.com/ESWChatSamsClubEnhanced1767014819141';
 
-				var codeGslbBaseURL = isProduction
+				var codeGslbBaseURL = isProduction()
 				? '00DHs00000NDcMH'
 				: '00DD50000009T77';
 
-				var botName = isProduction
-				? 'Chat_Atacadao_Enhanced'
-				: 'Chat_Atacadao_Enhanced';
+				var botName = isProduction()
+				? 'Chat_Sams_Enhanced'
+				: 'ChatSamsClubEnhanced';
+
+				setPreChat();
 
 				embeddedservice_bootstrap.settings.hideChatButtonOnLoad = true;
 				embeddedservice_bootstrap.settings.displayHelpButton = false;
@@ -53,17 +134,15 @@
 				);
 
 				console.log('embeddedservice_bootstrap.init finalizado');
+				setTimeout(function () {
+					handleOpenChat();
+				}, 500);
 			};
 
 			(function () {
-				var dominioAtual = window.location.hostname;
-				var isProduction =
-				(dominioAtual === 'www.atacadao.com.br' ||
-				dominioAtual === 'secure.atacadao.com.br');
-
-				var urlEmbeddedservice = isProduction
-				? 'https://carrefourservice.my.site.com/ESWChatAtacadaoEnhanced1768352701292/assets/js/bootstrap.min.js'
-				: 'https://carrefourservice--varejohml.sandbox.my.site.com/ESWChatAtacadaoEnhanced1760357614442/assets/js/bootstrap.min.js';
+				var urlEmbeddedservice = isProduction()
+				? 'https://carrefourservice.my.site.com/ESWChatSamsEnhanced1768353344484/assets/js/bootstrap.min.js'
+				: 'https://carrefourservice--varejohml.sandbox.my.site.com/ESWChatSamsClubEnhanced1767014819141/assets/js/bootstrap.min.js';
 
 				console.log('URL do script esw.min.js:', urlEmbeddedservice);
 
@@ -96,32 +175,7 @@
 					console.warn('embeddedservice_bootstrap não está disponível no handleOpenChat');
 				}
 			};
-
-			function createSalesForceChatButton() {
-				if (!window.salesforceChatButtonInitialized) {
-					console.log('Criando botão de chat Salesforce');
-					var button = document.createElement('button');
-					button.className = 'salesforce-chat-button';
-					button.onclick = function () {
-						console.log('Botão de chat clicado');
-						handleOpenChat();
-					};
-
-					var icon = document.createElement('img');
-					icon.src =
-						'https://atacadaobr.vtexassets.com/assets/vtex.file-manager-graphql/images/1dcd33fd-f2f3-4c52-97f1-7c71287a0e95___d477fad1a4205afa7a331082414168ac.svg';
-					icon.className = 'salesforce-chat-icon';
-
-					button.appendChild(icon);
-					document.body.appendChild(button);
-
-					window.salesforceChatButtonInitialized = true;
-				} else {
-					le.log('Botão de chat Salesforce já estava criado');
-				}
-			}
-
-			createSalesForceChatButton();
 		</script>
+		<script src="./index-carina-prod_files/esw.min(1).js.baixados"></script>
 	</body>
 </html>
